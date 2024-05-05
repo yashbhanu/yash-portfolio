@@ -26,13 +26,13 @@ export default function Home() {
             <Image src={LinkedInDark} alt="github" width={38} height={38} />
           </div>
         </div>
-        <div className="flex flex-col w-full lg:px-16 mt-20 px-10">
+        <div className="flex flex-col lg:px-16 md:mt-20 mt-10 sm:px-10 px-6">
           <div className="flex flex-col flex-1 text-medGrey items-start justify-center gap-4 lg:px-20">
             <p className="text-xl lg:text-2xl">
               Hi, I am <span className="text-darkBlue">Yash</span>
             </p>
 
-            <p className="text-2xl lg:text-4xl lg:leading-[3.2rem] lg:w-9/12 w-full">
+            <p className="text-2xl lg:text-4xl lg:leading-[3.2rem] leading-[2.5rem] 2xl:w-11/12 w-full">
               I design, code and engineer software applications while writing about code
             </p>
 
@@ -40,7 +40,7 @@ export default function Home() {
               Resume
             </button>
           </div>
-          <Image src={Intro} alt="github" />
+          <Image className="xl:w-80 lg:w-72 md:w-60" src={Intro} alt="github" />
         </div>
       </section>
     </>

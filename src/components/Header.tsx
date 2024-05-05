@@ -28,38 +28,40 @@ const Header = () => {
           <Image src={FriesMenu} alt="menu" />
         </button>
       </nav>
-      {showMenu && (
-        <div className="transition duration-500 ease-in-out fixed top-0 right-0 bg-lightBlue h-screen w-1/2">
-          <div className="p-3 flex justify-end">
-            <button onClick={() => setShowMenu(false)}>
-              <Image
-                className=""
-                src={close}
-                width={25}
-                height={25}
-                alt="close"
-              />
-            </button>
-          </div>
-          <div className="flex justify-center">
-            <ul className="flex flex-col gap-4 px-3 text-medGrey text-xl mt-12">
-              <Link href="#about">/about</Link>
-              <Link href="#about">/projects</Link>
-              <Link href="/blog">/blog</Link>
-              <Link href="#contact">/contact</Link>
-            </ul>
-          </div>
-          <div className="flex gap-3 justify-center w-full bottom-0 absolute py-3">
-            <Image src={MediumDark} alt="github" width={26} height={26} />
-
-            <Image src={GmailDark} alt="github" width={24} height={24} />
-
-            <Image src={GithubDark} alt="github" width={26} height={26} />
-
-            <Image src={LinkedInDark} alt="github" width={26} height={26} />
-          </div>
+      <aside
+        className={`bg-lightBlue fixed top-0 right-0 bg-[#F5FBFF] drop-shadow-xl h-screen sm:w-1/2 w-4/6 transform ${
+          showMenu ? "translate-x-0" : "translate-x-full"
+        } transition-all`}
+      >
+        <div className="p-3 flex justify-end">
+          <button onClick={() => setShowMenu(false)}>
+            <Image
+              className=""
+              src={close}
+              width={25}
+              height={25}
+              alt="close"
+            />
+          </button>
         </div>
-      )}
+        <div className="flex justify-center">
+          <ul className="flex flex-col gap-6 px-3 text-medGrey text-2xl mt-16">
+            <Link href="#about">/about</Link>
+            <Link href="#about">/projects</Link>
+            <Link href="/blog">/blog</Link>
+            <Link href="#contact">/contact</Link>
+          </ul>
+        </div>
+        <div className="flex gap-3 justify-center w-full bottom-0 absolute py-3 px-2">
+          <Image src={MediumDark} alt="github" width={32} height={32} />
+
+          <Image src={GmailDark} alt="github" width={30} height={30} />
+
+          <Image src={GithubDark} alt="github" width={32} height={32} />
+
+          <Image src={LinkedInDark} alt="github" width={32} height={32} />
+        </div>
+      </aside>
     </header>
   );
 };
