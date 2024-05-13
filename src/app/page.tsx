@@ -4,11 +4,14 @@ import GithubDark from "../../public/logos/GitHubDark.svg";
 import GmailDark from "../../public/logos/GmailDark.svg";
 import MediumDark from "../../public/logos/MediumDark.svg";
 import LinkedInDark from "../../public/logos/LinkedInDark.svg";
+import ExternalLink from "../../public/logos/ExternalLink.svg";
 import GmailBlue from "../../public/logos/GmailBlue.svg";
 import GitHubBlue from "../../public/logos/GitHubBlue.svg";
 import MediumBlue from "../../public/logos/MediumBlue.svg";
 import LinkedInBlue from "../../public/logos/LinkedInBlue.svg";
 import Intro from "../../public/images/Intro.svg";
+import scapeHome from "../../public/images/scapeHome.png";
+import Academics from "@/components/Academics";
 
 export default function Home() {
   return (
@@ -45,10 +48,10 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sm:p-8 p-2 m-auto text-center">
+      <section className="sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 mt-10">
         <span className="text-3xl text-medGrey ">about me</span>
 
-        <div className="flex flex-col md:flex-row gap-16 2xl:px-40 xl:px-32 lg:px-28 md:px-14 sm:px-8 px-6 mt-20">
+        <div className="flex flex-col md:flex-row gap-16 2xl:px-40 xl:px-32 lg:px-20 md:px-10 sm:px-8 px-6 md:mt-20 mt-10">
           <div className="w-full lg:w-1/2">
             <p className="text-xl text-medGrey text-left">
               I am a Full Stack Developer passionate in creating seamless web
@@ -97,6 +100,59 @@ export default function Home() {
                 <p className="text-darkBlue">Git</p>
               </div>
             </div>
+          </div>
+        </div>
+
+        <Academics />
+      </section>
+
+      <section className="m-auto mt-10 text-center">
+        <span className="text-3xl text-medGrey ">projects</span>
+
+        <div className="2xl:px-40 xl:px-32 lg:px-20 md:px-10 sm:px-8 px-6 my-12">
+          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-16 place-items-center md:m-auto text-center">
+            {[1, 2, 3, 4].map((card) => (
+              <div className="relative w-full flex flex-row">
+                <div className="absolute md:top-12 md:right-10 top-6 right-6 max-w-full">
+                  <Image className="w-full" src={scapeHome} alt="img" />
+                </div>
+                <div className=" w-1/5"></div>
+                <div className="w-full border border-medGrey text-medGrey p-4">
+                  <div className="flex flex-col gap-6 3xl:mt-60 lg:mt-48 md:mt-36 sm:mt-24 mt-12">
+                    <span className="text-4xl font-medium text-left">
+                      Scape
+                    </span>
+                    <p className="text-left w-full">
+                      Scape is a cutting-edge chat application that brings
+                      people together through intuitive and dynamic
+                      communication features.
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      <div className="border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
+                        <p className="text-white text-sm">Javascript</p>
+                      </div>
+
+                      <div className="border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 flex justify-center items-center">
+                        <p className="text-white text-sm">ReactJs</p>
+                      </div>
+
+                      <div className="border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 flex justify-center items-center">
+                        <p className="text-white text-sm">NextJs</p>
+                      </div>
+
+                      <div className="border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 flex justify-center items-center">
+                        <p className="text-white text-sm">NestJS</p>
+                      </div>
+                    </div>
+
+                    <div className="flex gap-3 justify-end">
+                      <Image src={GithubDark} alt="github" />
+                      <Image src={ExternalLink} alt="github" />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
