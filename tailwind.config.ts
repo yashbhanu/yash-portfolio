@@ -18,6 +18,12 @@ const config: Config = {
         darkBlue: "#0EA5E9",
         medGrey: "#475860",
       },
+      screens: {
+        "3xl": "1900px",
+      },
+      maxWidth: {
+        "3xl": "1900px",
+      },
     },
   },
   plugins: [],

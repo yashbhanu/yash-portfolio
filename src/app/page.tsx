@@ -48,114 +48,128 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 mt-10">
-        <span className="text-3xl text-medGrey ">about me</span>
+      <div className="max-w-screen-3xl mx-auto">
+        <section className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 mt-10">
+          <span className="text-3xl text-medGrey ">about me</span>
 
-        <div className="flex flex-col md:flex-row gap-16 2xl:px-40 xl:px-32 lg:px-20 md:px-10 sm:px-8 px-6 md:mt-20 mt-10">
-          <div className="w-full lg:w-1/2">
-            <p className="text-xl text-medGrey text-left">
-              I am a Full Stack Developer passionate in creating seamless web
-              applications which exceeds expectations with a knack for crafting
-              optimized solutions.
-            </p>
-            <p className="text-xl mt-8 text-medGrey text-left">
-              I design, code, and engineer digital experiences with a focus on
-              user-centric design create solutions that are not just functional,
-              but also beautiful and intuitive.
-            </p>
-          </div>
+          <div className="flex flex-col md:flex-row gap-16 2xl:px-40 xl:px-32 lg:px-20 md:px-10 sm:px-8 px-6 md:mt-20 mt-10">
+            <div className="w-full lg:w-1/2">
+              <p className="text-xl text-medGrey text-left">
+                I am a Full Stack Developer passionate in creating seamless web
+                applications which exceeds expectations with a knack for
+                crafting optimized solutions.
+              </p>
+              <p className="text-xl mt-8 text-medGrey text-left">
+                I design, code, and engineer digital experiences with a focus on
+                user-centric design create solutions that are not just
+                functional, but also beautiful and intuitive.
+              </p>
+            </div>
 
-          <div className="w-full lg:w-1/2 flex flex-col gap-8">
-            <p className="text-2xl text-medGrey text-left">skills</p>
-            <div className="flex flex-wrap gap-3">
-              <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
-                <p className="text-darkBlue">Javascript</p>
-              </div>
+            <div className="w-full lg:w-1/2 flex flex-col gap-8">
+              <p className="text-2xl text-medGrey text-left">skills</p>
+              <div className="flex flex-wrap gap-3">
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
+                  <p className="text-darkBlue">Javascript</p>
+                </div>
 
-              <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
-                <p className="text-darkBlue">ReactJs</p>
-              </div>
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
+                  <p className="text-darkBlue">ReactJs</p>
+                </div>
 
-              <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
-                <p className="text-darkBlue">NextJs</p>
-              </div>
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
+                  <p className="text-darkBlue">NextJs</p>
+                </div>
 
-              <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
-                <p className="text-darkBlue">NodeJs</p>
-              </div>
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
+                  <p className="text-darkBlue">NodeJs</p>
+                </div>
 
-              <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
-                <p className="text-darkBlue">MongoDB</p>
-              </div>
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
+                  <p className="text-darkBlue">MongoDB</p>
+                </div>
 
-              <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
-                <p className="text-darkBlue">Docker</p>
-              </div>
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
+                  <p className="text-darkBlue">Docker</p>
+                </div>
 
-              <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 flex items-center">
-                <p className="text-darkBlue">NestJs</p>
-              </div>
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 flex items-center">
+                  <p className="text-darkBlue">NestJs</p>
+                </div>
 
-              <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
-                <p className="text-darkBlue">Git</p>
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
+                  <p className="text-darkBlue">Git</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
 
-        <Academics />
-      </section>
+          <Academics />
+        </section>
 
-      <section className="m-auto mt-10 text-center">
-        <span className="text-3xl text-medGrey ">projects</span>
+        <section className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 !mt-10">
+          <span className="text-3xl text-medGrey">projects</span>
 
-        <div className="2xl:px-40 xl:px-32 lg:px-20 md:px-10 sm:px-8 px-6 my-12">
-          <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-16 place-items-center md:m-auto text-center">
-            {[1, 2, 3, 4].map((card) => (
-              <div className="relative w-full flex flex-row">
-                <div className="absolute md:top-12 md:right-10 top-6 right-6 max-w-full">
-                  <Image className="w-full" src={scapeHome} alt="img" />
-                </div>
-                <div className=" w-1/5"></div>
-                <div className="w-full border border-medGrey text-medGrey p-4">
-                  <div className="flex flex-col gap-6 3xl:mt-60 lg:mt-48 md:mt-36 sm:mt-24 mt-12">
-                    <span className="text-4xl font-medium text-left">
-                      Scape
-                    </span>
-                    <p className="text-left w-full">
-                      Scape is a cutting-edge chat application that brings
-                      people together through intuitive and dynamic
-                      communication features.
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <div className="border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                        <p className="text-white text-sm">Javascript</p>
+          <div className="xl:px-32 lg:px-12 md:px-10 sm:px-8 px-6 my-14">
+            <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-8 xl:gap-12 place-items-center md:m-auto text-center">
+              {[1, 2, 3, 4].map((card) => (
+                <div className="md:w-4/5 lg:w-full w-full flex flex-row">
+                  <div className="sm:w-1/6 w-1/12"></div>
+                  <div className="w-full border border-medGrey text-medGrey">
+                    {/* <div className="-ml-14 mt-4 md:top-12 md:right-10 top-6 right-6 max-w-full"> */}
+                    <Image
+                      className="sm:-ml-14 -ml-8 mt-8 w-full"
+                      src={scapeHome}
+                      alt="img"
+                    />
+                    {/* </div> */}
+                    <div className="flex flex-col sm:gap-6 gap-4 p-4">
+                      <span className="text-4xl font-medium text-left">
+                        Scape
+                      </span>
+                      <p className="text-left w-full">
+                        Scape is a cutting-edge chat application that brings
+                        people together through intuitive and dynamic
+                        communication features.
+                      </p>
+                      <div className="flex flex-wrap gap-2">
+                        <div className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
+                          <p className="text-white sm:text-sm text-xs">
+                            Javascript
+                          </p>
+                        </div>
+
+                        <div className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
+                          <p className="text-white sm:text-sm text-xs">
+                            ReactJs
+                          </p>
+                        </div>
+
+                        <div className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
+                          <p className="text-white sm:text-sm text-xs">
+                            NextJs
+                          </p>
+                        </div>
+
+                        <div className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
+                          <p className="text-white sm:text-sm text-xs">
+                            NestJS
+                          </p>
+                        </div>
                       </div>
 
-                      <div className="border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 flex justify-center items-center">
-                        <p className="text-white text-sm">ReactJs</p>
+                      <div className="flex gap-3 justify-end">
+                        <Image src={GithubDark} alt="github" />
+                        <Image src={ExternalLink} alt="github" />
                       </div>
-
-                      <div className="border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 flex justify-center items-center">
-                        <p className="text-white text-sm">NextJs</p>
-                      </div>
-
-                      <div className="border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 flex justify-center items-center">
-                        <p className="text-white text-sm">NestJS</p>
-                      </div>
-                    </div>
-
-                    <div className="flex gap-3 justify-end">
-                      <Image src={GithubDark} alt="github" />
-                      <Image src={ExternalLink} alt="github" />
                     </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </div>
     </>
   );
 }
