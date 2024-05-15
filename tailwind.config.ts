@@ -19,7 +19,7 @@ const config: Config = {
         medGrey: "#475860",
       },
       screens: {
-        "3xl": "1900px",
+        "3xl": "1750px",
       },
       maxWidth: {
         "3xl": "1900px",

@@ -5,6 +5,7 @@ import GmailDark from "../../public/logos/GmailDark.svg";
 import MediumDark from "../../public/logos/MediumDark.svg";
 import LinkedInDark from "../../public/logos/LinkedInDark.svg";
 import ExternalLink from "../../public/logos/ExternalLink.svg";
+import contact from "../../public/images/contact.svg";
 import GmailBlue from "../../public/logos/GmailBlue.svg";
 import GitHubBlue from "../../public/logos/GitHubBlue.svg";
 import MediumBlue from "../../public/logos/MediumBlue.svg";
@@ -12,21 +13,46 @@ import LinkedInBlue from "../../public/logos/LinkedInBlue.svg";
 import Intro from "../../public/images/Intro.svg";
 import scapeHome from "../../public/images/scapeHome.png";
 import Academics from "@/components/Academics";
+import Link from "next/link";
 
 export default function Home() {
   return (
     <>
-      <section className="h-screen w-full relative flex">
+      <section id="#" className="h-screen w-full relative flex">
         <Header />
         <div className="md:inline-block hidden w-1/4 h-full bg-lightBlue">
           <div className="flex flex-col gap-6 justify-center h-full fixed px-4">
-            <Image src={MediumDark} alt="github" width={38} height={38} />
+            <Link
+              className="cursor-pointer"
+              target="_blank"
+              href="https://medium.com/@bhanushaliyash2000"
+            >
+              <Image src={MediumDark} alt="medium" width={38} height={38} />
+            </Link>
 
-            <Image src={GmailDark} alt="github" width={33} height={33} />
+            <Link
+              className="cursor-pointer"
+              target="_blank"
+              href="mailto:bhanushaliyash2000@gmail.com"
+            >
+              <Image src={GmailDark} alt="gmail" width={38} height={38} />
+            </Link>
 
-            <Image src={GithubDark} alt="github" width={38} height={38} />
+            <Link
+              className="cursor-pointer"
+              target="_blank"
+              href="https://github.com/yashbhanu"
+            >
+              <Image src={GithubDark} alt="github" width={33} height={33} />
+            </Link>
 
-            <Image src={LinkedInDark} alt="github" width={38} height={38} />
+            <Link
+              className="cursor-pointer"
+              target="_blank"
+              href="https://www.linkedin.com/in/yash-bhanushali-024301212/"
+            >
+              <Image src={LinkedInDark} alt="linkedin" width={38} height={38} />
+            </Link>
           </div>
         </div>
         <div className="flex flex-col lg:px-16 md:mt-20 mt-10 sm:px-10 px-6">
@@ -49,7 +75,10 @@ export default function Home() {
       </section>
 
       <div className="max-w-screen-3xl mx-auto">
-        <section className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 mt-10">
+        <section
+          id="about"
+          className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 mt-10"
+        >
           <span className="text-3xl text-medGrey ">about me</span>
 
           <div className="flex flex-col md:flex-row gap-16 2xl:px-40 xl:px-32 lg:px-20 md:px-10 sm:px-8 px-6 md:mt-20 mt-10">
@@ -107,7 +136,10 @@ export default function Home() {
           <Academics />
         </section>
 
-        <section className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 !mt-10">
+        <section
+          id="projects"
+          className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 !mt-10"
+        >
           <span className="text-3xl text-medGrey">projects</span>
 
           <div className="xl:px-32 lg:px-12 md:px-10 sm:px-8 px-6 my-14">
@@ -116,13 +148,13 @@ export default function Home() {
                 <div className="md:w-4/5 lg:w-full w-full flex flex-row">
                   <div className="sm:w-1/6 w-1/12"></div>
                   <div className="w-full border border-medGrey text-medGrey">
-                    {/* <div className="-ml-14 mt-4 md:top-12 md:right-10 top-6 right-6 max-w-full"> */}
-                    <Image
-                      className="sm:-ml-14 -ml-8 mt-8 w-full"
-                      src={scapeHome}
-                      alt="img"
-                    />
-                    {/* </div> */}
+                    <div className="">
+                      <Image
+                        className="sm:-ml-14 -ml-8 mt-8 w-full"
+                        src={scapeHome}
+                        alt="img"
+                      />
+                    </div>
                     <div className="flex flex-col sm:gap-6 gap-4 p-4">
                       <span className="text-4xl font-medium text-left">
                         Scape
@@ -166,6 +198,28 @@ export default function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section
+          id="contact"
+          className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 !mt-6"
+        >
+          <span className="text-3xl text-medGrey">get in touch</span>
+
+          <div className="xl:px-40 lg:px-12 md:px-10 sm:px-8 px-6 my-14">
+            <div className="md:py-8 py-12 md:px-12 px-8 mt-8 bg-lightBlue">
+              <div className="flex flex-col md:flex-row gap-6 justify-evenly items-center">
+                <div className="flex flex-col gap-3 text-medGrey text-left md:w-1/3 w-full">
+                  <span className="text-4xl">Hey there,</span>
+                  <p className="text-xl">
+                    Feel free to reach out for any queries or opportunities by
+                    dropping an <span className="text-darkBlue">email</span>.
+                  </p>
+                </div>
+                <Image className="md:w-72 w-60" src={contact} alt="contact" />
+              </div>
             </div>
           </div>
         </section>

@@ -5,3 +5,7 @@
 .icon {
   color: red;
 }
+
+html {
+  scroll-behavior: smooth;
+}

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { McLaren } from "next/font/google";
 import "./globals.css";
+import Layout from "@/components/Layout";
 
 const mclaren = McLaren({ weight: "400", subsets: ["latin"] });
 
@@ -16,7 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={mclaren.className}>{children}</body>
+      <body className={mclaren.className}>
+        <Layout>{children}</Layout>
+      </body>
     </html>
   );
 }

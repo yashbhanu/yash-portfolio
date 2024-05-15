@@ -17,7 +17,7 @@ const Header = () => {
         <span className="text-darkBlue text-2xl">Yash</span>
         <div className="md:flex hidden gap-12 text-medGrey text-xl">
           <Link href="#about">/about</Link>
-          <Link href="#about">/projects</Link>
+          <Link href="#projects">/projects</Link>
           <Link href="/blog">/blog</Link>
           <Link href="#contact">/contact</Link>
         </div>
@@ -53,13 +53,37 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex gap-3 justify-center w-full bottom-0 absolute py-3 px-2">
-          <Image src={MediumDark} alt="github" width={32} height={32} />
+          <Link
+            target="_blank"
+            className="cursor-pointer"
+            href="https://medium.com/@bhanushaliyash2000"
+          >
+            <Image src={MediumDark} alt="medium" width={32} height={32} />
+          </Link>
 
-          <Image src={GmailDark} alt="github" width={30} height={30} />
+          <Link
+            target="_blank"
+            className="cursor-pointer"
+            href="mailto:bhanushaliyash2000@gmail.com"
+          >
+            <Image src={GmailDark} alt="gmail" width={30} height={30} />
+          </Link>
 
-          <Image src={GithubDark} alt="github" width={32} height={32} />
+          <Link
+            target="_blank"
+            className="cursor-pointer"
+            href="https://github.com/yashbhanu"
+          >
+            <Image src={GithubDark} alt="github" width={32} height={32} />
+          </Link>
 
-          <Image src={LinkedInDark} alt="github" width={32} height={32} />
+          <Link
+            target="_blank"
+            className="cursor-pointer"
+            href="https://www.linkedin.com/in/yash-bhanushali-024301212/"
+          >
+            <Image src={LinkedInDark} alt="linkedin" width={32} height={32} />
+          </Link>
         </div>
       </aside>
     </header>
