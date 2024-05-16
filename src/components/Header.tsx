@@ -14,12 +14,14 @@ const Header = () => {
   return (
     <header className="absolute w-full">
       <nav className="md:px-24 md:py-6 px-4 py-3 flex justify-between">
-        <span className="text-darkBlue text-2xl">Yash</span>
+        <Link href="/">
+          <span className="text-darkBlue text-2xl">Yash</span>
+        </Link>
         <div className="md:flex hidden gap-12 text-medGrey text-xl">
-          <Link href="#about">/about</Link>
-          <Link href="#projects">/projects</Link>
+          <Link href="/#about">/about</Link>
+          <Link href="/#projects">/projects</Link>
           <Link href="/blog">/blog</Link>
-          <Link href="#contact">/contact</Link>
+          <Link href="/#contact">/contact</Link>
         </div>
         <button
           className="md:hidden inline-block"

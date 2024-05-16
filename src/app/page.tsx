@@ -18,7 +18,7 @@ import Link from "next/link";
 export default function Home() {
   return (
     <>
-      <section id="#" className="h-screen w-full relative flex">
+      <section id="#" className="h-screen w-full flex">
         <Header />
         <div className="md:inline-block hidden w-1/4 h-full bg-lightBlue">
           <div className="flex flex-col gap-6 justify-center h-full fixed px-4">
@@ -149,9 +149,9 @@ export default function Home() {
                   <div className="sm:w-1/6 w-1/12"></div>
                   <div className="w-full border border-medGrey text-medGrey">
                     <div className="">
-                      <Image
+                      <img
                         className="sm:-ml-14 -ml-8 mt-8 w-full"
-                        src={scapeHome}
+                        src="https://ik.imagekit.io/yashbhanu/scapeHome.png?updatedAt=1715766619875"
                         alt="img"
                       />
                     </div>

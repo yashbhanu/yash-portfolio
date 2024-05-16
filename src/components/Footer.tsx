@@ -14,7 +14,7 @@ const Footer = () => {
         Developed by Yash Bhanushali
       </span>
 
-      <div className="flex gap-3">
+      <div className="flex gap-3 items-center">
         <Link
           className="cursor-pointer"
           target="_blank"
