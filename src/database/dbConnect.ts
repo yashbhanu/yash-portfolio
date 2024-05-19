@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { ConnectOptions } from "mongoose";
 
 const MONGODB_URI = process.env.MONGODB_URI;
 
@@ -30,11 +30,10 @@ async function dbConnect() {
     const opts = {
       useNewUrlParser: true,
       useUnifiedTopology: true,
-      bufferCommands: false,
     };
 
     cached.promise = mongoose
-      .connect(MONGODB_URI as string, opts)
+      .connect(MONGODB_URI as string, opts as ConnectOptions)
       .then((mongoose) => {
         return mongoose;
       });
