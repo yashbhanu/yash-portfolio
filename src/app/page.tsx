@@ -14,8 +14,10 @@ import Intro from "../../public/images/Intro.svg";
 import scapeHome from "../../public/images/scapeHome.png";
 import Academics from "@/components/Academics";
 import Link from "next/link";
+import { getProjects } from "@/actions/projectAction";
 
-export default function Home() {
+export default async function Home() {
+  const projects: any = await getProjects();
   return (
     <>
       <section id="#" className="h-screen w-full flex">
@@ -97,8 +99,8 @@ export default function Home() {
 
             <div className="w-full lg:w-1/2 flex flex-col gap-8">
               <p className="text-2xl text-medGrey text-left">skills</p>
-              <div className="flex flex-wrap gap-3">
-                <div className="border-2 border-darkBlue rounded-full text-darkBlue px-6 py-1">
+              <div className="flex flex-wrap gap-3 text-sm sm:text-base">
+                <div className="border-2 border-darkBlue rounded-full text-darkBlue sm:px-6 px-4 py-1">
                   <p className="text-darkBlue">Javascript</p>
                 </div>
 
@@ -143,56 +145,51 @@ export default function Home() {
           <span className="text-3xl text-medGrey">projects</span>
 
           <div className="xl:px-32 lg:px-12 md:px-10 sm:px-8 px-6 my-14">
-            <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-8 xl:gap-12 place-items-center md:m-auto text-center">
-              {[1, 2, 3, 4].map((card) => (
-                <div className="md:w-4/5 lg:w-full w-full flex flex-row">
+            <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-8 xl:gap-12">
+              {(projects || []).map((card: any) => (
+                <div
+                  key={card._id}
+                  className="md:w-4/5 lg:w-full w-full flex flex-row"
+                >
                   <div className="sm:w-1/6 w-1/12"></div>
-                  <div className="w-full border border-medGrey text-medGrey">
-                    <div className="">
+                  <div className="w-full border border-medGrey text-medGrey flex flex-col justify-between">
+                    <div className="drop-shadow-lg">
                       <img
                         className="sm:-ml-14 -ml-8 mt-8 w-full"
-                        src="https://ik.imagekit.io/yashbhanu/scapeHome.png?updatedAt=1715766619875"
+                        src={card.image}
                         alt="img"
                       />
                     </div>
-                    <div className="flex flex-col sm:gap-6 gap-4 p-4">
-                      <span className="text-4xl font-medium text-left">
-                        Scape
+                    <div className="flex flex-col w-full gap-2 p-4">
+                      <span className="sm:text-4xl text-3xl font-medium text-left">
+                        {card.projectName}
                       </span>
-                      <p className="text-left w-full">
-                        Scape is a cutting-edge chat application that brings
-                        people together through intuitive and dynamic
-                        communication features.
+                      <p className="text-left w-full text-sm sm:text-base">
+                        {card.description}
                       </p>
+                    </div>
+                    <div className="flex flex-col gap-2 justify-end p-4">
                       <div className="flex flex-wrap gap-2">
-                        <div className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                          <p className="text-white sm:text-sm text-xs">
-                            Javascript
-                          </p>
-                        </div>
-
-                        <div className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                          <p className="text-white sm:text-sm text-xs">
-                            ReactJs
-                          </p>
-                        </div>
-
-                        <div className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                          <p className="text-white sm:text-sm text-xs">
-                            NextJs
-                          </p>
-                        </div>
-
-                        <div className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                          <p className="text-white sm:text-sm text-xs">
-                            NestJS
-                          </p>
-                        </div>
+                        {card.technologies.map((tag: any) => (
+                          <div
+                            key={tag}
+                            className="flex-shrink-0 border-2 bg-medGrey border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center"
+                          >
+                            <p className="text-white sm:text-sm text-xs">
+                              {tag}
+                            </p>
+                          </div>
+                        ))}
                       </div>
-
-                      <div className="flex gap-3 justify-end">
-                        <Image src={GithubDark} alt="github" />
-                        <Image src={ExternalLink} alt="github" />
+                      <div className="flex justify-end items-center gap-3">
+                        <Link href={card.githubLink}>
+                          <Image src={GithubDark} alt="github" />
+                        </Link>
+                        {card?.projectLink && (
+                          <Link href={card.projectLink}>
+                            <Image src={ExternalLink} alt="projectLink" />
+                          </Link>
+                        )}
                       </div>
                     </div>
                   </div>
@@ -215,7 +212,17 @@ export default function Home() {
                   <span className="text-4xl">Hey there,</span>
                   <p className="text-xl">
                     Feel free to reach out for any queries or opportunities by
-                    dropping an <span className="text-darkBlue">email</span>.
+                    dropping an{" "}
+                    <span className="text-darkBlue">
+                      <Link
+                        className="cursor-pointer"
+                        target="_blank"
+                        href="mailto:bhanushaliyash2000@gmail.com"
+                      >
+                        email
+                      </Link>
+                    </span>
+                    .
                   </p>
                 </div>
                 <Image className="md:w-72 w-60" src={contact} alt="contact" />

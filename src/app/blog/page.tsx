@@ -2,8 +2,11 @@ import Header from "@/components/Header";
 import React from "react";
 import rightArrow from "../../../public/logos/RightArrow.svg";
 import Image from "next/image";
+import { getBlogs } from "@/actions/blogAction";
+import Link from "next/link";
 
-const Blog = () => {
+export default async function Blog() {
+  const blogs: any = await getBlogs();
   return (
     <main className="w-full flex min-h-screen flex-col">
       <Header />
@@ -18,9 +21,12 @@ const Blog = () => {
             the world of software development
           </span>
         </div>
-        <div className="w-full sm:px-24 lg:px-0 px-3 !mt-10 grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-8 xl:gap-16 w-4/5 place-items-center md:m-auto text-center mb-6">
-          {[1, 2, 3, 4].map((blog) => (
-            <div className="rounded-3xl border-2 border-medGrey w-full flex flex-col">
+        <div className="w-full sm:px-24 lg:px-0 px-3 !mt-10 grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-8 xl:gap-16 w-4/5 mb-6">
+          {(blogs || []).map((blog: any) => (
+            <div
+              key={blog._id}
+              className="rounded-3xl border-2 border-medGrey w-full flex flex-col justify-between gap-6"
+            >
               <div className="p-1 border-b-2 border-medGrey">
                 <div className="flex p-2 gap-2 justify-end mr-2">
                   <div className="h-3 w-3 rounded-full bg-medGrey" />
@@ -29,40 +35,37 @@ const Blog = () => {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-5 text-medGrey p-6">
-                <span className="text-2xl sm:text-3xl text-left">
-                  Implementing an Auth Guard with JWT tokens in Nest.js
+              <div className="flex flex-col gap-5 text-medGrey px-6">
+                <span className="text-xl sm:text-3xl text-left">
+                  {blog.blogName}
                 </span>
-                <p className="text-left">
-                  Authentication guards allow you to control access to routes
-                  and controllers in a NestJS application based on user
-                  authentication......
+              </div>
+              <div className="flex flex-col gap-5 text-medGrey px-6">
+                <p className="text-left text-sm sm:text-base">
+                  {blog.description}
                 </p>
-                <div className="flex flex-wrap gap-3">
-                  <div className="flex-shrink-0 border-2 border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                    <p className="text-medGrey sm:text-sm text-xs">
-                      Javascript
-                    </p>
-                  </div>
-
-                  <div className="flex-shrink-0 border-2 border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                    <p className="text-medGrey sm:text-sm text-xs">ReactJs</p>
-                  </div>
-
-                  <div className="flex-shrink-0 border-2 border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                    <p className="text-medGrey sm:text-sm text-xs">NextJs</p>
-                  </div>
-
-                  <div className="flex-shrink-0 border-2 border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center">
-                    <p className="text-medGrey sm:text-sm text-xs">NestJS</p>
-                  </div>
+              </div>
+              <div className="flex flex-col gap-5 text-medGrey px-6">
+                <div className="flex flex-wrap gap-2 sm:gap-3">
+                  {(blog.tags || []).map((tag: any) => (
+                    <div
+                      key={tag}
+                      className="flex-shrink-0 border-2 border-medGrey rounded-full text-darkBlue px-3 py-1 flex justify-center items-center"
+                    >
+                      <p className="text-medGrey sm:text-sm text-xs">{tag}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
 
-              <div className="p-1 border-t-2 border-medGrey w-full py-3">
-                <div className="mr-5 flex gap-2 justify-end items-center">
-                  <span className="text-2xl text-darkBlue">Read Post</span>
-                  <Image src={rightArrow} alt="arrow" />
+              <div className="p-1 border-t-2 border-medGrey w-full py-2 sm:py-3">
+                <div className="mr-5 flex justify-end items-center">
+                  <Link className="flex items-center gap-2" href={blog.link}>
+                    <span className="text-xl sm:text-2xl text-darkBlue">
+                      Read Post
+                    </span>
+                    <Image src={rightArrow} alt="arrow" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -71,6 +74,4 @@ const Blog = () => {
       </section>
     </main>
   );
-};
-
-export default Blog;
+}

@@ -48,10 +48,10 @@ const Header = () => {
         </div>
         <div className="flex justify-center">
           <ul className="flex flex-col gap-6 px-3 text-medGrey text-2xl mt-16">
-            <Link href="#about">/about</Link>
-            <Link href="#about">/projects</Link>
+            <Link href="/#about">/about</Link>
+            <Link href="/#projects">/projects</Link>
             <Link href="/blog">/blog</Link>
-            <Link href="#contact">/contact</Link>
+            <Link href="/#contact">/contact</Link>
           </ul>
         </div>
         <div className="flex gap-3 justify-center w-full bottom-0 absolute py-3 px-2">
