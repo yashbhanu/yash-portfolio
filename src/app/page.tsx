@@ -6,12 +6,7 @@ import MediumDark from "../../public/logos/MediumDark.svg";
 import LinkedInDark from "../../public/logos/LinkedInDark.svg";
 import ExternalLink from "../../public/logos/ExternalLink.svg";
 import contact from "../../public/images/contact.svg";
-import GmailBlue from "../../public/logos/GmailBlue.svg";
-import GitHubBlue from "../../public/logos/GitHubBlue.svg";
-import MediumBlue from "../../public/logos/MediumBlue.svg";
-import LinkedInBlue from "../../public/logos/LinkedInBlue.svg";
 import Intro from "../../public/images/Intro.svg";
-import scapeHome from "../../public/images/scapeHome.png";
 import Academics from "@/components/Academics";
 import Link from "next/link";
 import { getProjects } from "@/actions/projectAction";
@@ -68,9 +63,13 @@ export default async function Home() {
               about code
             </p>
 
-            <button className="border border-darkBlue md:px-10 md:py-3 px-6 py-2 rounded-full text-xl text-darkBlue mt-6">
+            <Link
+              href="https://drive.google.com/file/d/1UhGFynKpbrYzMJKAP3aQ-z6wQghoKx1r/view?usp=drivesdk"
+              className="border border-darkBlue md:px-10 md:py-3 px-6 py-2 rounded-full text-xl text-darkBlue mt-6"
+              target="_blank"
+            >
               Resume
-            </button>
+            </Link>
           </div>
           <Image className="lg:w-80 w-72" src={Intro} alt="github" />
         </div>

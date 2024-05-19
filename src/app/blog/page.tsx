@@ -60,7 +60,7 @@ export default async function Blog() {
 
               <div className="p-1 border-t-2 border-medGrey w-full py-2 sm:py-3">
                 <div className="mr-5 flex justify-end items-center">
-                  <Link className="flex items-center gap-2" href={blog.link}>
+                  <Link className="flex items-center gap-2" href={blog.link} target="_blank">
                     <span className="text-xl sm:text-2xl text-darkBlue">
                       Read Post
                     </span>
