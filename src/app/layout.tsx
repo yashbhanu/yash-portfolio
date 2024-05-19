@@ -6,12 +6,12 @@ import Layout from "@/components/Layout";
 const mclaren = McLaren({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Yash Bhanushali Portfolio",
-  description: "Yash Bhanushali Portfolio",
+  title: "Yash Bhanushali",
+  description: "Software Engineer with experience in web application development & expertise in various technologies",
   openGraph: {
     images: [
       {
-        url: "https://ik.imagekit.io/yashbhanu/opengraph.png?updatedAt=1716124868114",
+        url: "https://ik.imagekit.io/yashbhanu/opengraph.svg?updatedAt=1716143678290",
       },
     ],
   },
