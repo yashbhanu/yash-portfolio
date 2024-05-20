@@ -7,11 +7,13 @@ const mclaren = McLaren({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Yash Bhanushali",
-  description: "Software Engineer with experience in web application development & expertise in various technologies",
+  description:
+    "Software Engineer with experience in web application development & expertise in various technologies",
   openGraph: {
     images: [
       {
         url: "https://ik.imagekit.io/yashbhanu/opengraph.svg?updatedAt=1716143678290",
+        alt: "linkPreview",
       },
     ],
   },

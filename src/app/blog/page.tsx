@@ -21,11 +21,11 @@ export default async function Blog() {
             the world of software development
           </span>
         </div>
-        <div className="w-full sm:px-24 lg:px-0 px-3 !mt-10 grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-8 xl:gap-16 w-4/5 mb-6">
+        <div className="w-full sm:px-24 lg:px-0 px-5 !mt-10 grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-8 xl:gap-16 w-4/5 mb-6">
           {(blogs || []).map((blog: any) => (
             <div
               key={blog._id}
-              className="rounded-3xl border-2 border-medGrey w-full flex flex-col justify-between gap-6"
+              className="rounded-3xl border-2 border-medGrey w-full flex flex-col justify-between gap-4 sm:gap-6"
             >
               <div className="p-1 border-b-2 border-medGrey">
                 <div className="flex p-2 gap-2 justify-end mr-2">
@@ -35,17 +35,17 @@ export default async function Blog() {
                 </div>
               </div>
 
-              <div className="flex flex-col gap-5 text-medGrey px-6">
+              <div className="flex flex-col gap-5 text-medGrey sm:px-6 px-4">
                 <span className="text-xl sm:text-3xl text-left">
                   {blog.blogName}
                 </span>
               </div>
-              <div className="flex flex-col gap-5 text-medGrey px-6">
+              <div className="flex flex-col gap-5 text-medGrey sm:px-6 px-4">
                 <p className="text-left text-sm sm:text-base">
                   {blog.description}
                 </p>
               </div>
-              <div className="flex flex-col gap-5 text-medGrey px-6">
+              <div className="flex flex-col gap-5 text-medGrey sm:px-6 px-4">
                 <div className="flex flex-wrap gap-2 sm:gap-3">
                   {(blog.tags || []).map((tag: any) => (
                     <div

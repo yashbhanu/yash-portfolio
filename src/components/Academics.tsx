@@ -33,17 +33,17 @@ const Academics = () => {
         <div className="flex items-start md:items-center lg:gap-10 gap-6">
           <div className="p-[5px] md:mt-0 mt-3 rounded-full bg-darkBlue" />
           <p className="text-medGrey text-left text-lg">
-            I design, code, and engineer digital experiences with a focus on
-            user-centric design create solutions that are not just functional,
-            but also beautiful and intuitive.
+            {activeBar === "Education"
+              ? "Completed Postgraduation & Graduation from Mumbai University with a strong focus on software development, data structures, and algorithm design."
+              : "With Over 1.5 years of hands-on experience in developing, and deploying web applications using modern technologies and frameworks, contributing to various successful projects."}
           </p>
         </div>
         <div className="flex items-start md:items-center lg:gap-10 gap-6">
           <div className="p-[5px] rounded-full md:mt-0 mt-3 bg-darkBlue" />
           <p className="text-medGrey text-left text-lg">
-            I design, code, and engineer digital experiences with a focus on
-            user-centric design create solutions that are not just functional,
-            but also beautiful and intuitive.
+            {activeBar === "Education"
+              ? "Consistently achieved high academic performance and actively participated in various technical and hackathon events, showcasing problem-solving skills and teamwork."
+              : "Experienced working directly with clients to gather requirements, improving performance & user experience of applications while aligning with client requirements."}
           </p>
         </div>
       </div>
