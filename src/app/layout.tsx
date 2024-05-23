@@ -12,10 +12,11 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://ik.imagekit.io/yashbhanu/opengraph.svg?updatedAt=1716143678290",
+        url: "https://ik.imagekit.io/yashbhanu/preview1.png?updatedAt=1716486601927",
         alt: "linkPreview",
       },
     ],
+    url: "https://yash-bhanushali.vercel.app",
   },
 };
 

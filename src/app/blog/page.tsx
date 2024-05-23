@@ -5,6 +5,8 @@ import Image from "next/image";
 import { getBlogs } from "@/actions/blogAction";
 import Link from "next/link";
 
+export const dynamic = "force-dynamic";
+
 export default async function Blog() {
   const blogs: any = await getBlogs();
   return (
@@ -60,7 +62,11 @@ export default async function Blog() {
 
               <div className="p-1 border-t-2 border-medGrey w-full py-2 sm:py-3">
                 <div className="mr-5 flex justify-end items-center">
-                  <Link className="flex items-center gap-2" href={blog.link} target="_blank">
+                  <Link
+                    className="flex items-center gap-2"
+                    href={blog.link}
+                    target="_blank"
+                  >
                     <span className="text-xl sm:text-2xl text-darkBlue">
                       Read Post
                     </span>

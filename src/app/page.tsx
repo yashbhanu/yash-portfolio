@@ -11,6 +11,8 @@ import Academics from "@/components/Academics";
 import Link from "next/link";
 import { getProjects } from "@/actions/projectAction";
 
+export const dynamic = "force-dynamic";
+
 export default async function Home() {
   const projects: any = await getProjects();
   return (

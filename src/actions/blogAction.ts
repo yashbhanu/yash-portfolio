@@ -6,7 +6,7 @@ dbConnect();
 
 export async function getBlogs() {
   try {
-    return Blog.find({});
+    return Blog.find({}).exec();
   } catch (error: any) {
     return { error: error.message };
   }
