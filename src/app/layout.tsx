@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [
       {
-        url: "https://ik.imagekit.io/yashbhanu/Screenshot%20from%202024-05-24%2009-45-25.png?updatedAt=1716524758374",
+        url: "https://ik.imagekit.io/yashbhanu/oggraph.png?updatedAt=1716729168472",
         alt: "linkPreview",
       },
     ],
