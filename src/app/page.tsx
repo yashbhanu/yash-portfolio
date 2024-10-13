@@ -56,18 +56,18 @@ export default async function Home() {
         </div>
         <div className="flex flex-col lg:px-16 md:mt-20 mt-10 sm:px-10 px-6">
           <div className="flex flex-col flex-1 text-medGrey items-start justify-center gap-4 lg:px-20">
-            <p className="text-xl lg:text-2xl">
-              Hi, I am <span className="text-darkBlue">Yash</span>
+            <p className="text-4xl lg:text-5xl font-medium">
+              Hi, I am <span className="text-darkBlue">Yash, a Full Stack Developer</span>
             </p>
 
-            <p className="text-2xl lg:text-4xl lg:leading-[3.2rem] leading-[2.5rem] 2xl:w-11/12 w-full">
-              I design, code and engineer software applications while writing
+            <p className="text-xl lg:text-2xl lg:leading-[2.4rem] leading-[2rem] tracking-wide 2xl:w-11/12 w-full">
+              I design, code and engineer software applications focusing on creating efficient scalable solutions while writing
               about code
             </p>
 
             <Link
               href="https://drive.google.com/file/d/1UhGFynKpbrYzMJKAP3aQ-z6wQghoKx1r/view?usp=drivesdk"
-              className="border border-darkBlue md:px-10 md:py-3 px-6 py-2 rounded-full text-xl text-darkBlue mt-6"
+              className="border border-darkBlue md:px-9 md:py-3 px-6 py-2 rounded-full text-xl text-darkBlue mt-6"
               target="_blank"
             >
               Resume
@@ -82,7 +82,7 @@ export default async function Home() {
           id="about"
           className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 mt-10"
         >
-          <span className="text-3xl text-medGrey ">about me</span>
+          <span className="text-4xl text-medGrey ">about me</span>
 
           <div className="flex flex-col md:flex-row gap-16 2xl:px-40 xl:px-32 lg:px-20 md:px-10 sm:px-8 px-6 md:mt-20 mt-10">
             <div className="w-full lg:w-1/2">
@@ -143,7 +143,7 @@ export default async function Home() {
           id="projects"
           className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 !mt-10"
         >
-          <span className="text-3xl text-medGrey">projects</span>
+          <span className="text-4xl text-medGrey">projects</span>
 
           <div className="xl:px-32 lg:px-12 md:px-10 sm:px-8 px-6 my-14">
             <div className="w-full grid lg:grid-cols-2 grid-cols-1 gap-12 lg:gap-8 xl:gap-12">
@@ -153,13 +153,16 @@ export default async function Home() {
                   className="md:w-4/5 lg:w-full w-full flex flex-row"
                 >
                   <div className="sm:w-1/6 w-1/12"></div>
-                  <div className="w-full border border-medGrey text-medGrey flex flex-col justify-between">
-                    <div className="drop-shadow-lg">
+                  <div className="w-full rounded-2xl text-medGrey flex flex-col justify-between"
+                  style={{boxShadow : "rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px, rgba(0, 0, 0, 0.07) 0px -3px 6px -2px"}}
+                  >
+                    <div className="sm:-ml-14 -ml-8 mt-8 w-full drop-shadow-lg overflow-hidden relative group">
                       <img
-                        className="sm:-ml-14 -ml-8 mt-8 w-full"
+                        className="transition-transform duration-500 group-hover:scale-[1.2]"
                         src={card.image}
                         alt="img"
                       />
+                      <a className="absolute bg-slate-800/30 group-hover:opacity-100 opacity-0 flex justify-center items-center bottom-0 left-0 w-full h-full" href={card?.projectLink || card?.githubLink} target="_blank" />
                     </div>
                     <div className="flex flex-col w-full gap-2 p-4">
                       <span className="sm:text-4xl text-3xl font-medium text-left">
@@ -204,10 +207,14 @@ export default async function Home() {
           id="contact"
           className="w-full sm:p-8 p-2 m-auto text-center md:mt-0 sm:mt-6 !mt-6"
         >
-          <span className="text-3xl text-medGrey">get in touch</span>
+          <span className="text-4xl text-medGrey">get in touch</span>
 
           <div className="xl:px-40 lg:px-12 md:px-10 sm:px-8 px-6 my-14">
-            <div className="md:py-8 py-12 md:px-12 px-8 mt-8 bg-lightBlue">
+            <div className="md:py-8 py-12 md:px-12 px-8 mt-8 bg-lightBlue rounded-2xl"
+            style={{
+              boxShadow: "rgba(173, 216, 230, 0.4) 0px 10px 15px -3px, rgba(173, 216, 230, 0.3) 0px 4px 6px -2px"
+            }}
+            >
               <div className="flex flex-col md:flex-row gap-6 justify-evenly items-center">
                 <div className="flex flex-col gap-3 text-medGrey text-left md:w-1/3 w-full">
                   <span className="text-4xl">Hey there,</span>

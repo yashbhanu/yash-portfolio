@@ -5,6 +5,7 @@ interface IBlog extends Document {
   description: string;
   tags: string[];
   link: string;
+  coverImage: string;
 }
 
 const BlogSchema: Schema<IBlog> = new mongoose.Schema({
@@ -21,6 +22,10 @@ const BlogSchema: Schema<IBlog> = new mongoose.Schema({
     required: true,
   },
   link: {
+    type: String,
+    required: true,
+  },
+  coverImage: {
     type: String,
     required: true,
   },
