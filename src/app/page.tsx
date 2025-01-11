@@ -66,7 +66,7 @@ export default async function Home() {
             </p>
 
             <Link
-              href="https://drive.google.com/file/d/1UhGFynKpbrYzMJKAP3aQ-z6wQghoKx1r/view?usp=drivesdk"
+              href="https://drive.google.com/file/d/1r3mDsziCiEu5J5tXf2Od4TvTh-_Gwyxi/view?usp=sharing"
               className="border border-darkBlue md:px-9 md:py-3 px-6 py-2 rounded-full text-xl text-darkBlue mt-6"
               target="_blank"
             >
