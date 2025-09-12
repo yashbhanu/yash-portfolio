@@ -35,7 +35,7 @@ const Academics = () => {
           <p className="text-medGrey text-left text-lg">
             {activeBar === "Education"
               ? "Completed Postgraduation & Graduation from Mumbai University with a strong focus on software development, data structures, and algorithm design."
-              : "With Over 1.5 years of hands-on experience in developing, and deploying web applications using modern technologies and frameworks, contributing to various successful projects."}
+              : "With Over 2.5 years of hands-on experience in developing, and deploying web applications using modern technologies and frameworks, contributing to various successful projects."}
           </p>
         </div>
         <div className="flex items-start md:items-center lg:gap-10 gap-6">
