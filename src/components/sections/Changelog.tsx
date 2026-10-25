@@ -20,7 +20,9 @@ export default function Changelog() {
           return (
             <li key={i} className="grid-12 relative gap-y-2 border-t border-rule py-8 first:border-ink">
               <div className="col-span-4 flex items-baseline gap-3 md:col-span-3 md:flex-col md:gap-1">
-                <span className="mono text-ink">{version ?? "v—"}</span>
+                {(version || process.env.NODE_ENV !== "production") && (
+                  <span className="mono text-ink">{version ?? "v—"}</span>
+                )}
                 <span className="label">
                   [{KIND_TAG[entry.kind]}]{start && <> · {start} — {end}</>}
                 </span>

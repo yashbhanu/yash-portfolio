@@ -18,7 +18,7 @@ const rows: WorkRow[] = projects.map(({ slug, index, name, summary, year, role, 
 
 export default function WorkSection({ as }: { as?: "h1" | "h2" }) {
   return (
-    <section id={sections.work.id} aria-labelledby={`${sections.work.id}-title`} className="page pt-section">
+    <section id={sections.work.id} aria-labelledby={`${sections.work.id}-title`} className={`page ${as === "h1" ? "pt-8 md:pt-12" : "pt-section"}`}>
       <SectionHead section={sections.work} as={as} />
       <div className="mt-12 md:mt-16">
         <WorkIndex projects={rows} />

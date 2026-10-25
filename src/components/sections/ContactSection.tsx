@@ -7,7 +7,7 @@ export default function ContactSection({ as: Tag = "h2" }: { as?: "h1" | "h2" })
   const socials = site.socials.filter((s) => s.id !== "email");
 
   return (
-    <section id={sections.contact.id} aria-labelledby="contact-title" className="grain mt-section border-t border-ink pb-section">
+    <section id={sections.contact.id} aria-labelledby="contact-title" className={`grain border-t border-ink pb-section ${Tag === "h1" ? "mt-8 md:mt-12" : "mt-section"}`}>
       <div className="page pt-3">
         <div className="grid-12">
           <p className="label col-span-2 md:col-span-3">

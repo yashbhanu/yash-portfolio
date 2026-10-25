@@ -13,7 +13,7 @@ interface Props {
 
 export default function WritingToc({ entries, total, as }: Props) {
   return (
-    <section id={sections.writing.id} aria-labelledby={`${sections.writing.id}-title`} className="page pt-section">
+    <section id={sections.writing.id} aria-labelledby={`${sections.writing.id}-title`} className={`page ${as === "h1" ? "pt-8 md:pt-12" : "pt-section"}`}>
       <SectionHead section={sections.writing} as={as} />
 
       <ol className="mt-12 md:mt-16">

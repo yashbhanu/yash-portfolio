@@ -7,11 +7,11 @@ export default function AboutSection({ as }: { as?: "h1" | "h2" }) {
   const { location } = site;
 
   return (
-    <section id={sections.about.id} aria-labelledby={`${sections.about.id}-title`} className="page pt-section">
+    <section id={sections.about.id} aria-labelledby={`${sections.about.id}-title`} className={`page ${as === "h1" ? "pt-8 md:pt-12" : "pt-section"}`}>
       <SectionHead section={sections.about} as={as} />
 
       <div className="grid-12 mt-12 gap-y-14 md:mt-16">
-        <div className="col-span-4 space-y-6 md:col-span-7 md:col-start-4 lg:col-span-6 lg:col-start-4">
+        <div className="col-span-4 space-y-6 md:col-span-9 md:col-start-4 lg:col-span-6 lg:col-start-4">
           {about.bio.map((para, i) => (
             <p
               key={i}
@@ -26,7 +26,7 @@ export default function AboutSection({ as }: { as?: "h1" | "h2" }) {
           ))}
         </div>
 
-        <aside aria-label="Spec sheet" className="col-span-4 md:col-span-4 md:col-start-9 lg:col-span-3 lg:col-start-10">
+        <aside aria-label="Spec sheet" className="col-span-4 md:col-span-9 md:col-start-4 lg:col-span-3 lg:col-start-10">
           <div className="border border-ink">
             <p className="label flex justify-between border-b border-ink bg-ink px-3 py-2 text-paper">
               <span>Spec sheet</span>
