@@ -6,7 +6,7 @@ import WritingToc from "@/components/sections/WritingToc";
 export const metadata: Metadata = {
   title: "Writing",
   description: "Technical articles on Next.js, NestJS, Node.js, websockets and data visualisation.",
-  alternates: { canonical: "/writing" },
+  alternates: { canonical: "/writing", types: { "application/rss+xml": "/writing/feed.xml" } },
   openGraph: openGraph("/writing"),
 };
 

@@ -52,5 +52,7 @@ src/
 
 - Theme: `data-theme` on `<html>`, falling back to `prefers-color-scheme`; tokens in `src/app/globals.css`.
 - ⌘K / Ctrl+K opens the command palette (loaded on first use).
+- Keyboard shortcuts: `g h/w/a/r/c` to navigate, `t` for theme, `?` for the reference sheet.
+- RSS for all posts at `/writing/feed.xml`. Past site versions are listed under *Editions* in the colophon (`content/sections.ts`).
 - `prefers-reduced-motion` disables the heading reveals and schematic drawing (shown complete) and reduces page transitions to a plain fade.
 - `/blog` and `/projects` permanently redirect to `/writing` and `/work`.

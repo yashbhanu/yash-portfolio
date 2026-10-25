@@ -8,6 +8,7 @@ import Providers from "@/components/ui/Providers";
 import { ToastProvider } from "@/components/ui/Toast";
 import SiteHeader from "@/components/layout/SiteHeader";
 import Colophon from "@/components/layout/Colophon";
+import KeyboardShortcuts from "@/components/layout/KeyboardShortcuts";
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -15,7 +16,7 @@ export const metadata: Metadata = {
   description: site.description,
   authors: [{ name: site.name, url: site.url }],
   creator: site.name,
-  alternates: { canonical: "/" },
+  alternates: { canonical: "/", types: { "application/rss+xml": "/writing/feed.xml" } },
   openGraph: {
     type: "website",
     siteName: site.name,
@@ -56,6 +57,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               {children}
             </main>
             <Colophon />
+            <KeyboardShortcuts />
           </ToastProvider>
         </Providers>
       </body>

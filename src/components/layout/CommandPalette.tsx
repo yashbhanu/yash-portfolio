@@ -21,6 +21,7 @@ export default function CommandPalette({ items, open, onOpenChange, onToast }: P
     onOpenChange(false);
     const { action } = item;
     if (action.type === "theme") toggleTheme();
+    else if (action.type === "event") window.dispatchEvent(new Event(action.name));
     else if (action.type === "copy") {
       try {
         await navigator.clipboard.writeText(action.value);

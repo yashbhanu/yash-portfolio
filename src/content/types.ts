@@ -30,6 +30,8 @@ export interface Site {
   resumeUrl: string;
   /** Public RSS feed used for the masthead's latest-post line. */
   mediumFeed: string;
+  /** Public repository for this site. */
+  sourceRepo: string;
   socials: SocialLink[];
 }
 

@@ -22,6 +22,7 @@ export const site: Site = {
   resumeUrl:
     "https://drive.google.com/file/d/1_kXKWn5HqzifzL7yVshdq605NmgI8H4f/view?usp=sharing",
   mediumFeed: "https://medium.com/feed/@bhanushaliyash2000",
+  sourceRepo: "https://github.com/yashbhanu/yash-portfolio",
   socials: [
     { id: "github", label: "GitHub", href: "https://github.com/yashbhanu", handle: "yashbhanu" },
     {

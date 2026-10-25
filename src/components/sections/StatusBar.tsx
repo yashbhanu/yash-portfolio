@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { site } from "@/content/site";
+import { formatMonth } from "@/lib/format";
 import type { LatestPost } from "@/lib/latest-post";
 import LiveClock from "@/components/ui/LiveClock";
 
@@ -37,6 +38,9 @@ export default function StatusBar({ latest }: { latest: LatestPost }) {
         <LiveClock timeZone={location.timeZone} label={location.tzLabel} />
       </Cell>
       <Cell k="Latest">
+        <time dateTime={latest.date} className="mr-2 text-muted">
+          {formatMonth(latest.date.slice(0, 7))}
+        </time>
         <Link
           href={latest.href}
           {...(latest.external && { target: "_blank", rel: "noopener noreferrer" })}

@@ -11,11 +11,11 @@ export default function Colophon() {
   return (
     <footer className="border-t border-ink">
       <div className="page grid-12 gap-y-8 py-10">
-        <p className="label col-span-4 md:col-span-12 lg:col-span-3">
+        <p className="label col-span-full">
           <span className="text-accent-ink">§</span> Colophon
         </p>
 
-        <div className="col-span-4 md:col-span-4 lg:col-span-3">
+        <div className="col-span-4 md:col-span-6 lg:col-span-3">
           <p className="label mb-2">Typeset in</p>
           <ul className="space-y-1 text-[0.95rem]">
             {colophon.type.map((t) => (
@@ -27,7 +27,7 @@ export default function Colophon() {
           </ul>
         </div>
 
-        <div className="col-span-4 md:col-span-4 lg:col-span-3">
+        <div className="col-span-4 md:col-span-6 lg:col-span-3">
           <p className="label mb-2">Built with</p>
           <ul className="flex flex-wrap gap-x-3 gap-y-1 text-[0.95rem]">
             {colophon.stack.map((item, i) => (
@@ -39,11 +39,38 @@ export default function Colophon() {
           </ul>
         </div>
 
-        <div className="col-span-4 flex flex-col justify-between gap-4 md:col-span-4 md:items-end md:text-right lg:col-span-3">
-          <p className="mono text-muted">
-            {colophon.version}
-            {sha && <> · {sha}</>} · © {year} {site.name}
-          </p>
+        <div className="col-span-4 md:col-span-6 lg:col-span-3">
+          <p className="label mb-2">Editions</p>
+          <ul className="space-y-1 text-[0.95rem]">
+            {colophon.editions.map((e) => (
+              <li key={e.label} className="flex justify-between gap-4">
+                {e.href ? (
+                  <a href={e.href} target="_blank" rel="noopener noreferrer" className="link">
+                    {e.label} <span aria-hidden>↗</span>
+                    <span className="sr-only">(Wayback Machine, opens in a new tab)</span>
+                  </a>
+                ) : (
+                  <span>{e.label}</span>
+                )}
+                <span className="mono text-muted">{e.note}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="col-span-4 flex flex-col justify-between gap-4 md:col-span-6 lg:col-span-3 lg:items-end lg:text-right">
+          <div className="space-y-1">
+            <p className="mono text-muted">
+              {colophon.version}
+              {sha && <> · {sha}</>} · © {year} {site.name}
+            </p>
+            <a href={site.sourceRepo} target="_blank" rel="noopener noreferrer" className="label link block">
+              View source ↗
+            </a>
+            <p className="label hidden md:block">
+              Press <kbd className="border border-rule px-1 text-ink">?</kbd> for shortcuts
+            </p>
+          </div>
           <Link href="#top" className="label link">
             Back to top ↑
           </Link>

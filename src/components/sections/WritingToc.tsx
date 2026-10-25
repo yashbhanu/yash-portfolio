@@ -53,13 +53,18 @@ export default function WritingToc({ entries, total, as }: Props) {
         ))}
       </ol>
 
-      {total !== undefined && total > entries.length && (
-        <div className="border-t border-rule pt-4">
+      <div className="flex justify-between gap-4 border-t border-rule pt-4">
+        {total !== undefined && total > entries.length ? (
           <Link href={sections.writing.href} className="label link text-ink">
             All writing ({total}) →
           </Link>
-        </div>
-      )}
+        ) : (
+          <span />
+        )}
+        <a href="/writing/feed.xml" className="label link">
+          RSS feed
+        </a>
+      </div>
     </section>
   );
 }

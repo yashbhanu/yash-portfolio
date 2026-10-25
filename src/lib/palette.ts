@@ -2,11 +2,13 @@ import "server-only";
 import { projects } from "@/content/projects";
 import { sections } from "@/content/sections";
 import { site } from "@/content/site";
+import { OPEN_SHORTCUTS_EVENT } from "./events";
 import { getWriting } from "./writing";
 
 export type PaletteAction =
   | { type: "link"; href: string; external?: boolean }
   | { type: "theme" }
+  | { type: "event"; name: string }
   | { type: "copy"; value: string; message: string };
 
 export interface PaletteItem {
@@ -64,6 +66,21 @@ export function getPaletteItems(): PaletteItem[] {
       hint: "pdf ↗",
       keywords: ["cv", "resume"],
       action: { type: "link", href: site.resumeUrl, external: true },
+    },
+    {
+      id: "shortcuts",
+      group: "Actions",
+      label: "Keyboard shortcuts",
+      hint: "?",
+      action: { type: "event", name: OPEN_SHORTCUTS_EVENT },
+    },
+    {
+      id: "rss",
+      group: "Actions",
+      label: "Subscribe via RSS",
+      hint: "/writing/feed.xml",
+      keywords: ["feed", "subscribe"],
+      action: { type: "link", href: "/writing/feed.xml", external: true },
     },
   ];
 

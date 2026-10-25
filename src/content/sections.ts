@@ -78,4 +78,29 @@ export const colophon = {
   ],
   stack: ["Next.js 14 (App Router)", "TypeScript", "Tailwind CSS", "Motion", "MDX + Shiki", "Vercel"],
   version: "v2.0",
+  /** Past versions of the site, newest first. */
+  editions: [
+    { label: "Vol. 2", note: "current", href: null },
+    {
+      label: "Vol. 1",
+      note: "2024–2026, archived",
+      href: "https://web.archive.org/web/20260223050105/https://yash-bhanushali.vercel.app/",
+    },
+  ],
+};
+
+/** Two-key "g then x" navigation plus single-key actions; `?` opens the sheet. */
+export const shortcuts = {
+  goto: [
+    { keys: "g h", label: "Front page", href: "/" },
+    { keys: "g w", label: "Work", href: "/work" },
+    { keys: "g a", label: "About", href: "/about" },
+    { keys: "g r", label: "Writing (read)", href: "/writing" },
+    { keys: "g c", label: "Contact", href: "/contact" },
+  ],
+  actions: [
+    { keys: "⌘ K", label: "Command palette" },
+    { keys: "t", label: "Toggle theme" },
+    { keys: "?", label: "This sheet" },
+  ],
 };
