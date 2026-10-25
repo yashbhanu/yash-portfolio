@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { openGraph } from "@/lib/metadata";
 import ContactSection from "@/components/sections/ContactSection";
 
 export const metadata: Metadata = {
   title: "Contact",
   description: "Email, GitHub, LinkedIn and Medium.",
   alternates: { canonical: "/contact" },
+  openGraph: openGraph("/contact"),
 };
 
 export default function ContactPage() {

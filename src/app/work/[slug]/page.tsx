@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getProject, projects } from "@/content/projects";
+import { openGraph } from "@/lib/metadata";
 import DevTodo from "@/components/ui/DevTodo";
 import Schematic from "@/components/project/Schematic";
 import CaseSection from "@/components/project/CaseSection";
@@ -22,7 +23,7 @@ export function generateMetadata({ params }: Params): Metadata {
     title: `${project.name} — case study`,
     description: project.summary,
     alternates: { canonical: `/work/${project.slug}` },
-    openGraph: { type: "article", url: `/work/${project.slug}` },
+    openGraph: openGraph(`/work/${project.slug}`, { type: "article" }, false),
   };
 }
 

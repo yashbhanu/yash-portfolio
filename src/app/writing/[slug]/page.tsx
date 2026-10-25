@@ -5,6 +5,7 @@ import { compileMDX } from "next-mdx-remote/rsc";
 import rehypePrettyCode, { type Options as PrettyCodeOptions } from "rehype-pretty-code";
 import { site } from "@/content/site";
 import { formatDate } from "@/lib/format";
+import { openGraph } from "@/lib/metadata";
 import { getArticle, getArticles } from "@/lib/writing";
 import { mdxComponents } from "@/components/writing/mdx-components";
 
@@ -23,13 +24,11 @@ export function generateMetadata({ params }: Params): Metadata {
     title: article.title,
     description: article.description,
     alternates: { canonical: article.href },
-    openGraph: {
-      type: "article",
-      url: article.href,
-      publishedTime: article.date,
-      authors: [site.name],
-      tags: article.tags,
-    },
+    openGraph: openGraph(
+      article.href,
+      { type: "article", publishedTime: article.date, authors: [site.name], tags: article.tags },
+      false,
+    ),
   };
 }
 
