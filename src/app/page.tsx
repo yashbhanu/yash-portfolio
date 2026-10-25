@@ -9,12 +9,11 @@ import contact from "../../public/images/contact.svg";
 import Intro from "../../public/images/Intro.svg";
 import Academics from "@/components/Academics";
 import Link from "next/link";
-import { getProjects } from "@/actions/projectAction";
+import { projects as projectData } from "@/content/projects";
 
-export const dynamic = "force-dynamic";
-
-export default async function Home() {
-  const projects: any = await getProjects();
+export default function Home() {
+  // Temporary adapter until the v2 sections replace this page.
+  const projects = projectData.map((p) => ({ _id: p.slug, projectName: p.name, description: p.summary, image: p.image.src, technologies: p.stack, githubLink: p.links.github ?? "", projectLink: p.links.live }));
   return (
     <>
       <section id="#" className="h-screen w-full flex">

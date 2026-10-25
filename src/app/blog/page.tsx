@@ -2,13 +2,11 @@ import Header from "@/components/Header";
 import React from "react";
 import rightArrow from "../../../public/logos/RightArrow.svg";
 import Image from "next/image";
-import { getBlogs } from "@/actions/blogAction";
+import { posts } from "@/content/posts";
 import Link from "next/link";
 
-export const dynamic = "force-dynamic";
-
-export default async function Blog() {
-  const blogs: any = await getBlogs();
+export default function Blog() {
+  const blogs = posts.map((p) => ({ _id: p.slug, blogName: p.title, description: p.description, tags: p.tags, link: p.href, coverImage: p.coverImage }));
   return (
     <main className="w-full flex min-h-screen flex-col">
       <Header />
