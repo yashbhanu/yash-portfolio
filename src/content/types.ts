@@ -11,6 +11,9 @@ export interface SocialLink {
 }
 
 export interface Site {
+  /** Current employer, for structured data. */
+  worksFor: string | null;
+  education: string[];
   name: string;
   shortName: string;
   role: string;
@@ -30,7 +33,7 @@ export interface Site {
   socials: SocialLink[];
 }
 
-export type StackLayer = "language" | "frontend" | "backend" | "data" | "infra";
+export type StackLayer = "language" | "frontend" | "backend" | "ai" | "data" | "infra";
 
 export interface StackGroup {
   layer: StackLayer;

@@ -21,6 +21,8 @@ const personJsonLd = {
   email: `mailto:${site.email}`,
   address: { "@type": "PostalAddress", addressLocality: site.location.city, addressCountry: "IN" },
   knowsAbout: about.stack.flatMap((g) => g.items),
+  ...(site.worksFor && { worksFor: { "@type": "Organization", name: site.worksFor } }),
+  alumniOf: site.education.map((name) => ({ "@type": "CollegeOrUniversity", name })),
   sameAs: site.socials.filter((s) => s.id !== "email").map((s) => s.href),
 };
 

@@ -15,8 +15,9 @@ export const site: Site = {
   location: { city: "Mumbai", country: "India", timeZone: "Asia/Kolkata", tzLabel: "IST" },
   // TODO(yash): availability line for the status bar, e.g. "Open to senior FE/FS roles".
   availability: null,
-  // TODO(yash): current role + company for the status bar, e.g. "SDE II @ Company".
-  currentRole: null,
+  currentRole: "SDE II @ The Sleep Company",
+  worksFor: "The Sleep Company",
+  education: ["Mumbai University"],
   email: "bhanushaliyash2000@gmail.com",
   resumeUrl:
     "https://drive.google.com/file/d/1_kXKWn5HqzifzL7yVshdq605NmgI8H4f/view?usp=sharing",

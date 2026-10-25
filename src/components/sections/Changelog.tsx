@@ -33,16 +33,18 @@ export default function Changelog() {
                   {entry.title}
                   {entry.org && <span className="italic text-muted"> — {entry.org}</span>}
                 </h3>
-                <ul className="mt-4 space-y-2">
-                  {entry.notes.map((note, j) => (
-                    <li key={j} className="flex gap-3 text-muted">
-                      <span aria-hidden className="mono pt-[0.2em] text-accent-ink">
-                        +
-                      </span>
-                      <span>{note}</span>
-                    </li>
-                  ))}
-                </ul>
+                {entry.notes.length > 0 && (
+                  <ul className="mt-4 space-y-2">
+                    {entry.notes.map((note, j) => (
+                      <li key={j} className="flex gap-3 text-muted">
+                        <span aria-hidden className="mono pt-[0.2em] text-accent-ink">
+                          +
+                        </span>
+                        <span>{note}</span>
+                      </li>
+                    ))}
+                  </ul>
+                )}
                 {(!entry.start || (entry.kind === "experience" && !entry.org)) && (
                   <DevTodo>dates{entry.kind === "experience" ? ", company" : ", degree"} for “{entry.title}”</DevTodo>
                 )}
