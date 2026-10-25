@@ -19,10 +19,9 @@ const personJsonLd = {
   jobTitle: site.role,
   url: site.url,
   email: `mailto:${site.email}`,
-  address: { "@type": "PostalAddress", addressLocality: site.location.city, addressCountry: "IN" },
+  address: { "@type": "PostalAddress", addressCountry: site.location.countryCode },
   knowsAbout: about.stack.flatMap((g) => g.items),
   ...(site.worksFor && { worksFor: { "@type": "Organization", name: site.worksFor } }),
-  alumniOf: site.education.map((name) => ({ "@type": "CollegeOrUniversity", name })),
   sameAs: site.socials.filter((s) => s.id !== "email").map((s) => s.href),
 };
 
@@ -34,8 +33,8 @@ export default async function Home() {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <Masthead latest={latest} />
-      <WorkSection />
       <AboutSection />
+      <WorkSection />
       <Changelog />
       <WritingToc entries={writing.slice(0, 3)} total={writing.length} />
       <ContactSection />

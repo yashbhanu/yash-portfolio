@@ -5,7 +5,7 @@ import Changelog from "@/components/sections/Changelog";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Bio, stack and changelog of education and experience.",
+  description: "Bio, stack and a changelog of experience.",
   alternates: { canonical: "/about" },
   openGraph: openGraph("/about"),
 };

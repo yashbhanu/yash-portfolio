@@ -13,9 +13,7 @@ export default function Masthead({ latest }: { latest: LatestPost }) {
         <div className="label grid grid-cols-2 gap-x-gutter md:grid-cols-3">
           <span>Portfolio — {colophon.version.replace("v", "Vol. ")}</span>
           <span className="hidden text-center md:block">{site.role}</span>
-          <span className="text-right">
-            {site.location.city}, {site.location.country}
-          </span>
+          <span className="text-right">{site.location.country}</span>
         </div>
 
         {/* newspaper double rule */}

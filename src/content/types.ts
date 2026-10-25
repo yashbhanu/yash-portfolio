@@ -13,7 +13,6 @@ export interface SocialLink {
 export interface Site {
   /** Current employer, for structured data. */
   worksFor: string | null;
-  education: string[];
   name: string;
   shortName: string;
   role: string;
@@ -22,7 +21,8 @@ export interface Site {
   /** Legacy v1 meta description, kept for SEO continuity. */
   description: string;
   url: string;
-  location: { city: string; country: string; timeZone: string; tzLabel: string };
+  /** Country only; no city, since the search is pan-India. */
+  location: { country: string; countryCode: string; timeZone: string; tzLabel: string };
   /** Shown in the masthead status bar. `null` = not yet provided. */
   availability: string | null;
   currentRole: string | null;

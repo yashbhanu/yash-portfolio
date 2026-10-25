@@ -42,7 +42,7 @@ export default function AboutSection({ as }: { as?: "h1" | "h2" }) {
               <div className="grid grid-cols-[6.5rem_1fr] gap-3 px-3 py-3">
                 <dt className="label pt-[0.15em]">Based in</dt>
                 <dd className="text-[0.95rem] leading-snug">
-                  {location.city}, {location.country} ({location.tzLabel})
+                  {location.country} ({location.tzLabel})
                 </dd>
               </div>
             </dl>
@@ -57,7 +57,7 @@ export default function AboutSection({ as }: { as?: "h1" | "h2" }) {
               <span className="sr-only">(opens in a new tab)</span>
             </a>
           </div>
-          <p className="label mt-2">fig. 02 — stack, grouped by layer</p>
+          <p className="label mt-2">fig. 01 — stack, grouped by layer</p>
         </aside>
       </div>
     </section>

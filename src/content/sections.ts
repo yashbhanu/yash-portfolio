@@ -13,21 +13,21 @@ export interface SectionMeta {
 }
 
 export const sections = {
-  work: {
-    id: "work",
-    number: "01",
-    label: "Selected Work",
-    href: "/work",
-    title: ["Selected", "work"],
-    caption: "index of shipped projects, newest first",
-  },
   about: {
     id: "about",
-    number: "02",
+    number: "01",
     label: "About",
     href: "/about",
     title: ["About"],
     caption: "bio + spec sheet",
+  },
+  work: {
+    id: "work",
+    number: "02",
+    label: "Selected Work",
+    href: "/work",
+    title: ["Selected", "work"],
+    caption: "index of shipped projects, newest first",
   },
   timeline: {
     id: "timeline",
@@ -35,7 +35,7 @@ export const sections = {
     label: "Changelog",
     href: "/about#timeline",
     title: ["Changelog"],
-    caption: "education and experience, as release notes",
+    caption: "experience, as release notes",
   },
   writing: {
     id: "writing",
@@ -57,8 +57,8 @@ export const sections = {
 
 /** Slash-style primary navigation. */
 export const nav = [
-  { label: "work", href: "/work" },
   { label: "about", href: "/about" },
+  { label: "work", href: "/work" },
   { label: "writing", href: "/writing" },
   { label: "contact", href: "/contact" },
 ];
@@ -93,8 +93,8 @@ export const colophon = {
 export const shortcuts = {
   goto: [
     { keys: "g h", label: "Front page", href: "/" },
-    { keys: "g w", label: "Work", href: "/work" },
     { keys: "g a", label: "About", href: "/about" },
+    { keys: "g w", label: "Work", href: "/work" },
     { keys: "g r", label: "Writing (read)", href: "/writing" },
     { keys: "g c", label: "Contact", href: "/contact" },
   ],

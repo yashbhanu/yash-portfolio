@@ -1,7 +1,7 @@
 import type { TimelineEntry } from "./types";
 
-// Merges v1's Education / Experience tabs into one changelog, newest first.
-// Roles and dates only; the résumé carries the detail.
+// Experience as a changelog, newest first. Roles and dates only; the résumé
+// carries the detail. Education is intentionally left off.
 export const timeline: TimelineEntry[] = [
   {
     version: null,
@@ -28,24 +28,6 @@ export const timeline: TimelineEntry[] = [
     org: "Code-B",
     start: "2023-01",
     end: "2025-02",
-    notes: [],
-  },
-  {
-    version: null,
-    kind: "education",
-    title: "Master of Computer Applications",
-    org: "Mumbai University",
-    start: "2021-12",
-    end: "2023-07",
-    notes: ["Academic topper, batch 2021–23."],
-  },
-  {
-    version: null,
-    kind: "education",
-    title: "B.Sc. Computer Science",
-    org: "Mumbai University",
-    start: "2018-08",
-    end: "2021-04",
     notes: [],
   },
 ];

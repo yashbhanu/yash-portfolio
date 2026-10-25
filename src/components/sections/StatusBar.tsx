@@ -32,7 +32,7 @@ export default function StatusBar({ latest }: { latest: LatestPost }) {
         </span>
       </Cell>
       <Cell k="Loc">
-        {location.city}, {location.country === "India" ? "IN" : location.country}
+        {location.country}
       </Cell>
       <Cell k="Local">
         <LiveClock timeZone={location.timeZone} label={location.tzLabel} />

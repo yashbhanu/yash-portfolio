@@ -12,12 +12,11 @@ export const site: Site = {
   description:
     "Software Engineer with experience in web application development & expertise in various technologies",
   url: "https://yash-bhanushali.vercel.app",
-  location: { city: "Mumbai", country: "India", timeZone: "Asia/Kolkata", tzLabel: "IST" },
+  location: { country: "India", countryCode: "IN", timeZone: "Asia/Kolkata", tzLabel: "IST" },
   // TODO(yash): availability line for the status bar, e.g. "Open to senior FE/FS roles".
   availability: null,
   currentRole: "SDE II @ The Sleep Company",
   worksFor: "The Sleep Company",
-  education: ["Mumbai University"],
   email: "bhanushaliyash2000@gmail.com",
   resumeUrl:
     "https://drive.google.com/file/d/1_kXKWn5HqzifzL7yVshdq605NmgI8H4f/view?usp=sharing",
