@@ -25,6 +25,8 @@ export interface Site {
   currentRole: string | null;
   email: string;
   resumeUrl: string;
+  /** Public RSS feed used for the masthead's latest-post line. */
+  mediumFeed: string;
   ogImage: { url: string; alt: string };
   socials: SocialLink[];
 }

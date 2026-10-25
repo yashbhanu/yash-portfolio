@@ -20,6 +20,7 @@ export const site: Site = {
   email: "bhanushaliyash2000@gmail.com",
   resumeUrl:
     "https://drive.google.com/file/d/1_kXKWn5HqzifzL7yVshdq605NmgI8H4f/view?usp=sharing",
+  mediumFeed: "https://medium.com/feed/@bhanushaliyash2000",
   ogImage: {
     url: "https://ik.imagekit.io/yashbhanu/oggraph.png?updatedAt=1716729168472",
     alt: "Yash Bhanushali — Full Stack Developer",
