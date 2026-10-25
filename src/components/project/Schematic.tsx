@@ -127,11 +127,11 @@ export default function Schematic({ arch, figure }: { arch: Architecture; figure
         </span>
         <span className="flex items-center gap-3">
           <span className="inline-flex items-center gap-1.5">
-            <span aria-hidden className="inline-block h-px w-4 bg-ink" /> request
+            <span aria-hidden className="inline-block h-0.5 w-4 bg-ink" /> request
           </span>
           {arch.edges.some((e) => e.duplex) && (
             <span className="inline-flex items-center gap-1.5">
-              <span aria-hidden className="inline-block h-px w-4 bg-accent" /> realtime
+              <span aria-hidden className="inline-block h-0.5 w-4 bg-accent" /> realtime
             </span>
           )}
         </span>
