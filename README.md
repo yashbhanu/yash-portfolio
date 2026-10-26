@@ -2,6 +2,8 @@
 
 Personal portfolio of Yash Bhanushali. Next.js 14 (App Router), TypeScript, Tailwind CSS, Motion, MDX + Shiki. Fully static apart from a daily revalidation of the home page.
 
+Requires **Node 24** (pinned via `engines` in `package.json`, which Vercel uses, and `.nvmrc` for `nvm use`).
+
 ```bash
 npm install
 npm run dev     # http://localhost:3000
