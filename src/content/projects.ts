@@ -13,6 +13,8 @@ export const projects: Project[] = [
     image: {
       src: "https://ik.imagekit.io/yashbhanu/scapeHome.png?updatedAt=1716111214158",
       alt: "Scape chat application home screen",
+      width: 1760,
+      height: 605,
     },
     links: {
       github: "https://github.com/yashbhanu/scape-frontend",
@@ -49,6 +51,8 @@ export const projects: Project[] = [
     image: {
       src: "https://ik.imagekit.io/yashbhanu/zest.png?updatedAt=1716111049499",
       alt: "Zest grocery ordering storefront",
+      width: 1760,
+      height: 605,
     },
     links: {
       github: "https://github.com/yashbhanu/zest-frontend",
@@ -85,6 +89,8 @@ export const projects: Project[] = [
     image: {
       src: "https://ik.imagekit.io/yashbhanu/cine2.jpg?updatedAt=1716227843269",
       alt: "Cinematix trending movies grid",
+      width: 1760,
+      height: 605,
     },
     links: {
       github: "https://github.com/yashbhanu/CineMatix-Entertainment-App-ReactJS",
@@ -114,6 +120,8 @@ export const projects: Project[] = [
     image: {
       src: "https://ik.imagekit.io/yashbhanu/travel.jpg?updatedAt=1716227649593",
       alt: "Travel Log map with user-submitted locations",
+      width: 1760,
+      height: 605,
     },
     links: {
       github: "https://github.com/yashbhanu/Travel-Log-MERN-App",

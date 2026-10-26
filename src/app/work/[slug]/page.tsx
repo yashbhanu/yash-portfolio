@@ -105,16 +105,15 @@ export default function CaseStudyPage({ params }: Params) {
       </header>
 
       <figure className="page mt-6 md:mt-10">
-        <div className="relative aspect-[16/10] overflow-hidden border border-ink bg-paper-2">
-          <Image
-            src={project.image.src}
-            alt={project.image.alt}
-            fill
-            priority
-            sizes="(min-width: 1600px) 1500px, 100vw"
-            className="object-cover object-top"
-          />
-        </div>
+        <Image
+          src={project.image.src}
+          alt={project.image.alt}
+          width={project.image.width}
+          height={project.image.height}
+          priority
+          sizes="(min-width: 1600px) 1500px, 100vw"
+          className="h-auto w-full border border-ink"
+        />
         <figcaption className="label mt-2">
           fig. {nextFig()} — {project.image.alt}
         </figcaption>
@@ -155,9 +154,14 @@ export default function CaseStudyPage({ params }: Params) {
           <div className="grid gap-gutter md:grid-cols-2">
             {project.screenshots.map((s) => (
               <figure key={s.src}>
-                <div className="relative aspect-[16/10] overflow-hidden border border-rule bg-paper-2">
-                  <Image src={s.src} alt={s.alt} fill sizes="(min-width: 768px) 50vw, 100vw" className="object-cover object-top" />
-                </div>
+                <Image
+                  src={s.src}
+                  alt={s.alt}
+                  width={s.width}
+                  height={s.height}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="h-auto w-full border border-rule"
+                />
                 <figcaption className="label mt-2">
                   fig. {nextFig()} — {s.caption ?? s.alt}
                 </figcaption>

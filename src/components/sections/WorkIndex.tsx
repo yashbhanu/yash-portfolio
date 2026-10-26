@@ -9,14 +9,17 @@ import type { Project } from "@/content/types";
 
 export type WorkRow = Pick<Project, "slug" | "index" | "name" | "summary" | "stack" | "image" | "links">;
 
-const PREVIEW_W = 360;
-const PREVIEW_H = 240;
+const PREVIEW_W = 480;
 
 export default function WorkIndex({ projects }: { projects: WorkRow[] }) {
   const [active, setActive] = useState<string | null>(null);
   const [expanded, setExpanded] = useState<string | null>(null);
   const reduce = useReducedMotion();
   const baseId = useId();
+
+  // The preview takes the shown image's own aspect ratio; nothing is cropped.
+  const shown = projects.find((p) => p.slug === active) ?? projects[0];
+  const PREVIEW_H = Math.round((PREVIEW_W * shown.image.height) / shown.image.width) + 28;
 
   // Cursor-following preview (fine pointers only; hidden below md).
   const x = useMotionValue(0);
@@ -137,10 +140,10 @@ export default function WorkIndex({ projects }: { projects: WorkRow[] }) {
                       <Image
                         src={p.image.src}
                         alt={p.image.alt}
-                        width={720}
-                        height={480}
+                        width={p.image.width}
+                        height={p.image.height}
                         sizes="100vw"
-                        className="aspect-[3/2] w-full border border-rule object-cover"
+                        className="h-auto w-full border border-rule"
                       />
                       <p className="text-muted">{p.summary}</p>
                       <p className="mono text-muted">{p.stack.join(" · ")}</p>
@@ -172,27 +175,32 @@ export default function WorkIndex({ projects }: { projects: WorkRow[] }) {
       <m.div
         aria-hidden
         className="pointer-events-none fixed left-0 top-0 z-30 hidden md:block"
-        style={{ x: sx, y: sy, width: PREVIEW_W, height: PREVIEW_H }}
+        style={{ x: sx, y: sy, width: PREVIEW_W }}
       >
         <m.div
-          className="relative h-full w-full overflow-hidden border border-ink bg-paper-2 shadow-[8px_8px_0_0_var(--rule)]"
+          className="w-full border border-ink bg-paper shadow-[8px_8px_0_0_var(--rule)]"
           initial={false}
           animate={{ opacity: active ? 1 : 0, scale: active ? 1 : 0.92 }}
           transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
         >
-          {projects.map((p) => (
-            <Image
-              key={p.slug}
-              src={p.image.src}
-              alt=""
-              fill
-              sizes={`${PREVIEW_W}px`}
-              className={`object-cover transition-opacity duration-300 ${active === p.slug ? "opacity-100" : "opacity-0"}`}
-            />
-          ))}
-          <span className="label absolute bottom-0 left-0 bg-ink px-2 py-1 text-paper">
-            fig. {projects.find((p) => p.slug === active)?.index ?? "00"}
+          <span className="label block bg-ink px-2 py-1 text-paper">
+            fig. {shown.index} — {shown.name}
           </span>
+          <div className="relative">
+            {projects.map((p) => (
+              <Image
+                key={p.slug}
+                src={p.image.src}
+                alt=""
+                width={p.image.width}
+                height={p.image.height}
+                sizes={`${PREVIEW_W}px`}
+                className={`h-auto w-full transition-opacity duration-300 ${
+                  p.slug === shown.slug ? "relative opacity-100" : "absolute inset-x-0 top-0 opacity-0"
+                }`}
+              />
+            ))}
+          </div>
         </m.div>
       </m.div>
     </div>

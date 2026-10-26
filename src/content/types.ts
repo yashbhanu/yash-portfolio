@@ -93,11 +93,12 @@ export interface Project {
   name: string;
   summary: string;
   stack: string[];
-  image: { src: string; alt: string };
+  /** Intrinsic pixel size, so images render whole at their own aspect ratio. */
+  image: { src: string; alt: string; width: number; height: number };
   links: { github?: string; live?: string; extra?: { label: string; href: string }[] };
   problem: string | null;
   architecture: Architecture;
-  screenshots: { src: string; alt: string; caption?: string }[];
+  screenshots: { src: string; alt: string; width: number; height: number; caption?: string }[];
   metrics: { label: string; value: string }[];
 }
 
