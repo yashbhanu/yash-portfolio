@@ -37,8 +37,6 @@ export default function CaseStudyPage({ params }: Params) {
   const { links } = project;
 
   const meta: { k: string; v: React.ReactNode }[] = [
-    { k: "Year", v: project.year ?? "—" },
-    { k: "Role", v: project.role ?? "—" },
     { k: "Stack", v: project.stack.join(", ") },
   ];
 
@@ -103,9 +101,6 @@ export default function CaseStudyPage({ params }: Params) {
               </div>
             )}
           </dl>
-          <div className="col-span-4 md:col-span-12">
-            {(!project.year || !project.role) && <DevTodo>year and role for {project.name}</DevTodo>}
-          </div>
         </div>
       </header>
 
@@ -142,26 +137,6 @@ export default function CaseStudyPage({ params }: Params) {
         )}
       </CaseSection>
 
-      {(project.decisions.length > 0 || dev) && (
-      <CaseSection mark={nextMark()} title="Key decisions">
-        {project.decisions.length ? (
-          <ol className="space-y-8">
-            {project.decisions.map((d, j) => (
-              <li key={d.title} className="grid grid-cols-[2.5rem_1fr] gap-x-2 border-t border-rule pt-4">
-                <span className="mono text-accent-ink">{String(j + 1).padStart(2, "0")}</span>
-                <div>
-                  <h3 className="font-serif text-h3">{d.title}</h3>
-                  <p className="mt-2 text-muted">{d.body}</p>
-                </div>
-              </li>
-            ))}
-          </ol>
-        ) : (
-          <DevTodo>2–4 key technical decisions for {project.name} (content/projects.ts → decisions)</DevTodo>
-        )}
-      </CaseSection>
-      )}
-
       {project.metrics.length > 0 && (
         <CaseSection mark={nextMark()} title="Outcomes">
           <dl className="grid grid-cols-2 gap-gutter md:grid-cols-3">
@@ -175,7 +150,7 @@ export default function CaseStudyPage({ params }: Params) {
         </CaseSection>
       )}
 
-      {project.screenshots.length > 0 ? (
+      {project.screenshots.length > 0 && (
         <CaseSection mark={nextMark()} title="Screens" wide>
           <div className="grid gap-gutter md:grid-cols-2">
             {project.screenshots.map((s) => (
@@ -190,10 +165,6 @@ export default function CaseStudyPage({ params }: Params) {
             ))}
           </div>
         </CaseSection>
-      ) : (
-        <div className="page">
-          <DevTodo>extra screenshots for {project.name} (content/projects.ts → screenshots)</DevTodo>
-        </div>
       )}
 
       <nav aria-label="More projects" className="page mt-section">

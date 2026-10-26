@@ -4,13 +4,11 @@ import SectionHead from "@/components/ui/SectionHead";
 import WorkIndex, { type WorkRow } from "./WorkIndex";
 
 // Only the fields the index renders cross the client boundary.
-const rows: WorkRow[] = projects.map(({ slug, index, name, summary, year, role, stack, image, links }) => ({
+const rows: WorkRow[] = projects.map(({ slug, index, name, summary, stack, image, links }) => ({
   slug,
   index,
   name,
   summary,
-  year,
-  role,
   stack,
   image,
   links,

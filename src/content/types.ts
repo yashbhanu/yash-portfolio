@@ -87,24 +87,16 @@ export interface Architecture {
   inferred: boolean;
 }
 
-export interface Decision {
-  title: string;
-  body: string;
-}
-
 export interface Project {
   slug: string;
   index: string;
   name: string;
   summary: string;
-  year: string | null;
-  role: string | null;
   stack: string[];
   image: { src: string; alt: string };
   links: { github?: string; live?: string; extra?: { label: string; href: string }[] };
   problem: string | null;
   architecture: Architecture;
-  decisions: Decision[];
   screenshots: { src: string; alt: string; caption?: string }[];
   metrics: { label: string; value: string }[];
 }

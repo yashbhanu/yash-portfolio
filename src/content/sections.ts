@@ -27,7 +27,7 @@ export const sections = {
     label: "Selected Work",
     href: "/work",
     title: ["Selected", "work"],
-    caption: "index of shipped projects, newest first",
+    caption: "index of shipped projects",
   },
   timeline: {
     id: "timeline",

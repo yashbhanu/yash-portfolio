@@ -1,7 +1,7 @@
 import type { Project } from "./types";
 
-// Migrated from the MongoDB `projects` collection (names, summaries, stacks, images,
-// links are verbatim). Everything else is a placeholder until Yash fills it in.
+// Names, summaries, stacks, images and links migrated from v1. Problem statements
+// written from Yash's descriptions; architectures confirmed by Yash.
 export const projects: Project[] = [
   {
     slug: "scape",
@@ -9,8 +9,6 @@ export const projects: Project[] = [
     name: "Scape",
     summary:
       "Scape is a cutting-edge chat application that brings people together through intuitive and dynamic communication features.",
-    year: null, // TODO(yash): year built
-    role: null, // TODO(yash): e.g. "Solo · full stack"
     stack: ["Next.js", "NestJS", "MongoDB", "Socket.io"],
     image: {
       src: "https://ik.imagekit.io/yashbhanu/scapeHome.png?updatedAt=1716111214158",
@@ -19,13 +17,11 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/yashbhanu/scape-frontend",
       live: "https://scape-chat.vercel.app",
-      // TODO(yash): backend repo link (scape-backend?), if public.
     },
-    problem: null, // TODO(yash): what problem Scape solves, 2-3 sentences.
+    problem:
+      "Starting a conversation online usually means swapping numbers or adding someone on another platform first. Scape keeps it to one step: search for anyone on the app by their username and start chatting, with messages delivered in real time over Socket.io.",
     architecture: {
       caption: "realtime message flow",
-      // Flow given in the v2 brief: client → NestJS → MongoDB → Socket.io.
-      // TODO(yash): confirm hosting, auth, and whether Redis pub/sub is used here.
       inferred: false,
       nodes: [
         { id: "client", label: "Next.js client", detail: "browser", tier: "client" },
@@ -40,9 +36,8 @@ export const projects: Project[] = [
         { from: "ws", to: "db", label: "persist" },
       ],
     },
-    decisions: [], // TODO(yash): 2-4 key technical decisions (title + why).
-    screenshots: [], // TODO(yash): ImageKit URLs for extra screenshots.
-    metrics: [], // TODO(yash): any real numbers (users, latency, etc.), or leave empty.
+    screenshots: [],
+    metrics: [],
   },
   {
     slug: "zest",
@@ -50,8 +45,6 @@ export const projects: Project[] = [
     name: "Zest",
     summary:
       "An ecommerce web application to instantly order groceries with user friendly interface, JWT Authentication & seamless checkout process with payment integration",
-    year: null, // TODO(yash)
-    role: null, // TODO(yash)
     stack: ["React", "Express.js", "MongoDB", "Razorpay"],
     image: {
       src: "https://ik.imagekit.io/yashbhanu/zest.png?updatedAt=1716111049499",
@@ -60,13 +53,12 @@ export const projects: Project[] = [
     links: {
       github: "https://github.com/yashbhanu/zest-frontend",
       live: "https://zest-organic.vercel.app/",
-      // TODO(yash): backend repo link, if public.
     },
-    problem: null, // TODO(yash)
+    problem:
+      "Finding genuinely organic groceries online means sifting through catalogues where organic is just one filter among many. Zest is a complete e-commerce store that sells only organic products, covering browsing, cart, sign-in and online payment.",
     architecture: {
       caption: "order + payment flow",
-      // TODO(yash): derived from the stack list only; confirm or correct.
-      inferred: true,
+      inferred: false,
       nodes: [
         { id: "client", label: "React SPA", detail: "browser", tier: "client" },
         { id: "api", label: "Express API", detail: "JWT auth", tier: "service" },
@@ -80,9 +72,8 @@ export const projects: Project[] = [
         { from: "pay", to: "api", label: "verify" },
       ],
     },
-    decisions: [], // TODO(yash)
-    screenshots: [], // TODO(yash)
-    metrics: [], // TODO(yash)
+    screenshots: [],
+    metrics: [],
   },
   {
     slug: "cinematix",
@@ -90,8 +81,6 @@ export const projects: Project[] = [
     name: "Cinematix",
     summary:
       "An entertainment app built using ReactJS, Material UI, and Movie Database API to show Top trending movies & Web series.",
-    year: null, // TODO(yash)
-    role: null, // TODO(yash)
     stack: ["React", "TMDB API", "Material UI"],
     image: {
       src: "https://ik.imagekit.io/yashbhanu/cine2.jpg?updatedAt=1716227843269",
@@ -101,20 +90,19 @@ export const projects: Project[] = [
       github: "https://github.com/yashbhanu/CineMatix-Entertainment-App-ReactJS",
       live: "https://cinematix-entertainment.netlify.app",
     },
-    problem: null, // TODO(yash)
+    problem:
+      "Keeping up with what's popular means checking several sites, then working out which service is actually streaming it. Cinematix brings the top movies, shows and web series together in one place, each with links to where you can watch it.",
     architecture: {
       caption: "client-side data flow",
-      // TODO(yash): derived from the stack list only; confirm or correct.
-      inferred: true,
+      inferred: false,
       nodes: [
         { id: "client", label: "React SPA", detail: "Material UI", tier: "client" },
         { id: "tmdb", label: "TMDB API", detail: "movies · series", tier: "external" },
       ],
       edges: [{ from: "client", to: "tmdb", label: "REST" }],
     },
-    decisions: [], // TODO(yash)
-    screenshots: [], // TODO(yash)
-    metrics: [], // TODO(yash)
+    screenshots: [],
+    metrics: [],
   },
   {
     slug: "travel-log",
@@ -122,8 +110,6 @@ export const projects: Project[] = [
     name: "Travel Log",
     summary:
       "A web-based mapping platform providing reviews & user generated information of various geographical locations & tourist attractions.",
-    year: null, // TODO(yash)
-    role: null, // TODO(yash)
     stack: ["React", "Express.js", "MongoDB", "Mapbox"],
     image: {
       src: "https://ik.imagekit.io/yashbhanu/travel.jpg?updatedAt=1716227649593",
@@ -131,13 +117,13 @@ export const projects: Project[] = [
     },
     links: {
       github: "https://github.com/yashbhanu/Travel-Log-MERN-App",
-      // No live link in v1. TODO(yash): add one if deployed.
+      // No live deployment.
     },
-    problem: null, // TODO(yash)
+    problem:
+      "Reviews of places are scattered across sites and detached from where the places actually are. Travel Log lets registered users mark places directly on a map and review them, and every review is visible to anyone exploring the map.",
     architecture: {
       caption: "map + review flow",
-      // TODO(yash): derived from the stack list only; confirm or correct.
-      inferred: true,
+      inferred: false,
       nodes: [
         { id: "client", label: "React SPA", detail: "browser", tier: "client" },
         { id: "map", label: "Mapbox", detail: "tiles", tier: "external" },
@@ -150,9 +136,8 @@ export const projects: Project[] = [
         { from: "api", to: "db", label: "read / write" },
       ],
     },
-    decisions: [], // TODO(yash)
-    screenshots: [], // TODO(yash)
-    metrics: [], // TODO(yash)
+    screenshots: [],
+    metrics: [],
   },
 ];
 

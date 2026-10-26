@@ -1,8 +1,8 @@
 "use client";
 
-import { useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
+import { useMotionValue, useReducedMotion, useScroll, useTransform, type MotionValue } from "motion/react";
 import * as m from "motion/react-m";
-import { useMemo, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import type { Architecture } from "@/content/types";
 import { layoutSchematic, type Orientation } from "./schematic-layout";
 
@@ -101,8 +101,18 @@ export default function Schematic({ arch, figure }: { arch: Architecture; figure
   const ref = useRef<HTMLElement>(null);
   const reduce = useReducedMotion();
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start 0.85", "center 0.5"] });
-  const full = useTransform(scrollYProgress, () => 1);
-  const progress = reduce ? full : scrollYProgress;
+  // Starts at 0 on server and client alike (the server can't know the motion
+  // preference), then either follows scroll or jumps to fully drawn.
+  const progress = useMotionValue(0);
+
+  useEffect(() => {
+    if (reduce) {
+      progress.set(1);
+      return;
+    }
+    progress.set(scrollYProgress.get());
+    return scrollYProgress.on("change", (v) => progress.set(v));
+  }, [reduce, progress, scrollYProgress]);
 
   const description = `${arch.caption}: ${arch.edges
     .map((e) => {

@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useId, useState } from "react";
 import type { Project } from "@/content/types";
 
-export type WorkRow = Pick<Project, "slug" | "index" | "name" | "summary" | "year" | "role" | "stack" | "image" | "links">;
+export type WorkRow = Pick<Project, "slug" | "index" | "name" | "summary" | "stack" | "image" | "links">;
 
 const PREVIEW_W = 360;
 const PREVIEW_H = 240;
@@ -44,10 +44,8 @@ export default function WorkIndex({ projects }: { projects: WorkRow[] }) {
       {/* column heads */}
       <div aria-hidden className="label grid-12 hidden border-b border-rule pb-2 md:grid">
         <span className="col-span-1">No.</span>
-        <span className="col-span-5">Project</span>
-        <span className="col-span-1">Year</span>
-        <span className="col-span-3">Stack</span>
-        <span className="col-span-2">Role</span>
+        <span className="col-span-6">Project</span>
+        <span className="col-span-5">Stack</span>
       </div>
 
       <ol
@@ -82,7 +80,7 @@ export default function WorkIndex({ projects }: { projects: WorkRow[] }) {
                 onBlur={() => setActive(null)}
               >
                 <span className="mono col-span-1 text-muted">{p.index}</span>
-                <span className="col-span-5 flex items-baseline gap-4">
+                <span className="col-span-6 flex items-baseline gap-4">
                   <span
                     className={`font-serif text-h1 tracking-[-0.02em] transition-transform duration-500 ease-out ${
                       isActive ? "translate-x-3 italic" : ""
@@ -91,10 +89,8 @@ export default function WorkIndex({ projects }: { projects: WorkRow[] }) {
                     {p.name}
                   </span>
                 </span>
-                <span className="mono col-span-1 text-muted">{p.year ?? "—"}</span>
-                <span className="mono col-span-3 text-muted">{p.stack.join(" · ")}</span>
-                <span className="mono col-span-2 flex justify-between gap-2 text-muted">
-                  <span>{p.role ?? "—"}</span>
+                <span className="mono col-span-5 flex justify-between gap-4 text-muted">
+                  <span>{p.stack.join(" · ")}</span>
                   <span
                     aria-hidden
                     className={`text-ink transition-all duration-300 ${isActive ? "translate-x-0 text-accent-ink opacity-100" : "-translate-x-2 opacity-0"}`}
@@ -116,7 +112,7 @@ export default function WorkIndex({ projects }: { projects: WorkRow[] }) {
                 <span className="flex-1">
                   <span className={`block font-serif text-h2 leading-none ${isOpen ? "italic" : ""}`}>{p.name}</span>
                   <span className="mono mt-2 block text-muted">
-                    {[p.year, p.stack.slice(0, 2).join(" · ")].filter(Boolean).join(" — ")}
+                    {p.stack.slice(0, 2).join(" · ")}
                   </span>
                 </span>
                 <span
