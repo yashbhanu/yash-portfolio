@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# yash-bhanushali.vercel.app — v2 “Engineering Broadsheet”
 
-## Getting Started
+Personal portfolio of Yash Bhanushali. Next.js 14 (App Router), TypeScript, Tailwind CSS, Motion, MDX + Shiki. Fully static apart from a daily revalidation of the home page.
 
-First, run the development server:
+Requires **Node 24** (pinned via `engines` in `package.json`, which Vercel uses, and `.nvmrc` for `nvm use`).
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
+npm run lint
+npx tsc --noEmit
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+**Environment variables:** none required. `VERCEL_GIT_COMMIT_SHA` (set automatically by Vercel) is shown in the colophon if present. The v1 `MONGODB_URI` is no longer used.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Editing content
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+All copy and data live in `src/content`. Components never hardcode facts.
 
-## Learn More
+| File | What it holds |
+| --- | --- |
+| `site.ts` | name, positioning line, status bar (role / availability), email, résumé, socials, Medium feed |
+| `about.ts` | bio paragraphs, stack grouped by layer (spec sheet) |
+| `timeline.ts` | education + experience changelog (`start`/`end` as `YYYY-MM`; version tags derive from `start`) |
+| `projects.ts` | work index + case studies: summary, year, role, links, problem, architecture graph, decisions, screenshots, metrics |
+| `posts.ts` | Medium posts (external links, dates, reading time) |
+| `writing/*.mdx` | local long-form articles at `/writing/<slug>`; copy `_template.mdx` to start one |
+| `sections.ts` | section numbers/headings, nav, contact statement, colophon |
 
-To learn more about Next.js, take a look at the following resources:
+Search for `TODO(yash)` to find missing content. In `npm run dev`, gaps also show as dashed TODO boxes on the page; production builds hide them and skip empty case-study sections.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Architecture schematics
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Each project's `architecture` is a small graph: nodes with a `tier` (`client`, `edge`, `service`, `external`, `data`) and directed `edges` (`duplex: true` draws a realtime channel in the accent colour). `components/project/schematic-layout.ts` lays tiers out as columns (rows on phones), and `Schematic.tsx` draws the result on scroll.
 
-## Deploy on Vercel
+## Structure
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+src/
+  app/                    routes, metadata, OG images, sitemap, robots
+  content/                typed content layer (see above)
+  lib/                    writing index, Medium RSS, palette items, theme, OG renderer
+  components/
+    ui/                   primitives: SectionHead, RevealLines, ThemeToggle, Toast, …
+    layout/               header, slash nav, command palette, colophon
+    sections/             masthead, work index, about, changelog, writing TOC, contact
+    project/              case-study sections and the schematic
+    writing/              MDX component map
+  assets/fonts/           OFL fonts used only by the OG image renderer
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Notes
+
+- Theme: `data-theme` on `<html>`, falling back to `prefers-color-scheme`; tokens in `src/app/globals.css`.
+- ⌘K / Ctrl+K opens the command palette (loaded on first use).
+- Keyboard shortcuts: `g h/w/a/r/c` to navigate, `t` for theme, `?` for the reference sheet.
+- RSS for all posts at `/writing/feed.xml`.
+- `prefers-reduced-motion` disables the heading reveals and schematic drawing (shown complete) and reduces page transitions to a plain fade.
+- `/blog` and `/projects` permanently redirect to `/writing` and `/work`.
