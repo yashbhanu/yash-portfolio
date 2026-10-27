@@ -3,6 +3,9 @@ import { site } from "@/content/site";
 import CopyEmail from "@/components/ui/CopyEmail";
 import RevealLines from "@/components/ui/RevealLines";
 
+// Opens a Gmail compose window in the browser, for visitors without a mail app.
+const gmailCompose = (to: string) => `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(to)}`;
+
 export default function ContactSection({ as: Tag = "h2" }: { as?: "h1" | "h2" }) {
   const socials = site.socials.filter((s) => s.id !== "email");
 
@@ -34,8 +37,29 @@ export default function ContactSection({ as: Tag = "h2" }: { as?: "h1" | "h2" })
               >
                 {site.email}
               </a>
-              <CopyEmail email={site.email} />
+              <div className="flex items-center gap-4">
+                <CopyEmail email={site.email} />
+                <a
+                  href={gmailCompose(site.email)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="label link whitespace-nowrap text-ink"
+                >
+                  Open in Gmail ↗<span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </div>
             </div>
+            {site.phone && (
+              <div className="flex flex-wrap items-baseline gap-x-5 gap-y-1 border-b border-rule py-4">
+                <span className="label">Phone</span>
+                <a
+                  href={`tel:${site.phone.tel}`}
+                  className="font-serif text-h3 tabular-nums transition-colors hover:text-accent-ink"
+                >
+                  {site.phone.display}
+                </a>
+              </div>
+            )}
           </div>
 
           <nav aria-label="Elsewhere" className="col-span-4 md:col-span-4 md:col-start-9">

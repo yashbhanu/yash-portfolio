@@ -3,7 +3,7 @@ import { colophon } from "@/content/sections";
 import { site } from "@/content/site";
 
 // Vercel exposes the commit at build time; absent locally, which is fine.
-const sha = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7);
+// const sha = process.env.VERCEL_GIT_COMMIT_SHA?.slice(0, 7);
 
 export default function Colophon() {
   const year = new Date().getFullYear();
@@ -31,7 +31,7 @@ export default function Colophon() {
           <div className="space-y-1">
             <p className="mono text-muted">
               {colophon.version}
-              {sha && <> · {sha}</>} · © {year} {site.name}
+              {/* {sha && <> · {sha}</>} */} · © {year} {site.name}
             </p>
             <a href={site.sourceRepo} target="_blank" rel="noopener noreferrer" className="label link block">
               View source ↗

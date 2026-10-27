@@ -27,6 +27,8 @@ export interface Site {
   availability: string | null;
   currentRole: string | null;
   email: string;
+  /** `display` is shown; `tel` is the E.164 number used for the tel: link. */
+  phone: { display: string; tel: string } | null;
   resumeUrl: string;
   /** Public RSS feed used for the masthead's latest-post line. */
   mediumFeed: string;

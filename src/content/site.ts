@@ -18,8 +18,9 @@ export const site: Site = {
   currentRole: "SDE II @ The Sleep Company",
   worksFor: "The Sleep Company",
   email: "bhanushaliyash2000@gmail.com",
+  phone: { display: "+91 88798 48787", tel: "+918879848787" },
   resumeUrl:
-    "https://drive.google.com/file/d/1_kXKWn5HqzifzL7yVshdq605NmgI8H4f/view?usp=sharing",
+    "https://drive.google.com/file/d/13JTvwEXB2rX6cdUytfk3hHxPNaxYmw94/view",
   mediumFeed: "https://medium.com/feed/@bhanushaliyash2000",
   sourceRepo: "https://github.com/yashbhanu/yash-portfolio",
   socials: [
