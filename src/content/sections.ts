@@ -21,21 +21,21 @@ export const sections = {
     title: ["About"],
     caption: "bio + spec sheet",
   },
-  work: {
-    id: "work",
-    number: "02",
-    label: "Selected Work",
-    href: "/work",
-    title: ["Selected", "work"],
-    caption: "index of shipped projects",
-  },
   timeline: {
     id: "timeline",
-    number: "03",
+    number: "02",
     label: "Changelog",
     href: "/about#timeline",
     title: ["Changelog"],
     caption: "experience, as release notes",
+  },
+  work: {
+    id: "work",
+    number: "03",
+    label: "Selected Work",
+    href: "/work",
+    title: ["Selected", "work"],
+    caption: "index of shipped projects",
   },
   writing: {
     id: "writing",
@@ -78,15 +78,6 @@ export const colophon = {
   ],
   stack: ["Next.js 14 (App Router)", "TypeScript", "Tailwind CSS", "Motion", "MDX + Shiki", "Vercel"],
   version: "v2.0",
-  /** Past versions of the site, newest first. */
-  editions: [
-    { label: "Vol. 2", note: "current", href: null },
-    {
-      label: "Vol. 1",
-      note: "2024–2026, archived",
-      href: "https://web.archive.org/web/20260223050105/https://yash-bhanushali.vercel.app/",
-    },
-  ],
 };
 
 /** Two-key "g then x" navigation plus single-key actions; `?` opens the sheet. */

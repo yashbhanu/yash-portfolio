@@ -15,19 +15,7 @@ export default function Colophon() {
           <span className="text-accent-ink">§</span> Colophon
         </p>
 
-        <div className="col-span-4 md:col-span-6 lg:col-span-3">
-          <p className="label mb-2">Typeset in</p>
-          <ul className="space-y-1 text-[0.95rem]">
-            {colophon.type.map((t) => (
-              <li key={t.name} className="flex justify-between gap-4">
-                <span>{t.name}</span>
-                <span className="mono text-muted">{t.role}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="col-span-4 md:col-span-6 lg:col-span-3">
+        <div className="col-span-4 md:col-span-6">
           <p className="label mb-2">Built with</p>
           <ul className="flex flex-wrap gap-x-3 gap-y-1 text-[0.95rem]">
             {colophon.stack.map((item, i) => (
@@ -39,26 +27,7 @@ export default function Colophon() {
           </ul>
         </div>
 
-        <div className="col-span-4 md:col-span-6 lg:col-span-3">
-          <p className="label mb-2">Editions</p>
-          <ul className="space-y-1 text-[0.95rem]">
-            {colophon.editions.map((e) => (
-              <li key={e.label} className="flex justify-between gap-4">
-                {e.href ? (
-                  <a href={e.href} target="_blank" rel="noopener noreferrer" className="link">
-                    {e.label} <span aria-hidden>↗</span>
-                    <span className="sr-only">(Wayback Machine, opens in a new tab)</span>
-                  </a>
-                ) : (
-                  <span>{e.label}</span>
-                )}
-                <span className="mono text-muted">{e.note}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="col-span-4 flex flex-col justify-between gap-4 md:col-span-6 lg:col-span-3 lg:items-end lg:text-right">
+        <div className="col-span-4 flex flex-col justify-between gap-4 md:col-span-6 md:items-end md:text-right">
           <div className="space-y-1">
             <p className="mono text-muted">
               {colophon.version}

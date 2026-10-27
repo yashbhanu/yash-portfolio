@@ -34,8 +34,8 @@ export default async function Home() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
       <Masthead latest={latest} />
       <AboutSection />
-      <WorkSection />
       <Changelog />
+      <WorkSection />
       <WritingToc entries={writing.slice(0, 3)} total={writing.length} />
       <ContactSection />
     </>

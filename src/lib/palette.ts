@@ -74,14 +74,6 @@ export function getPaletteItems(): PaletteItem[] {
       hint: "?",
       action: { type: "event", name: OPEN_SHORTCUTS_EVENT },
     },
-    {
-      id: "rss",
-      group: "Actions",
-      label: "Subscribe via RSS",
-      hint: "/writing/feed.xml",
-      keywords: ["feed", "subscribe"],
-      action: { type: "link", href: "/writing/feed.xml", external: true },
-    },
   ];
 
   const elsewhere: PaletteItem[] = site.socials
