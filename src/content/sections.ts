@@ -77,7 +77,7 @@ export const colophon = {
     { name: "JetBrains Mono", role: "metadata" },
   ],
   stack: ["Next.js 14 (App Router)", "TypeScript", "Tailwind CSS", "Motion", "MDX + Shiki", "Vercel"],
-  version: "v2.0",
+  version: "v1.0",
 };
 
 /** Two-key "g then x" navigation plus single-key actions; `?` opens the sheet. */

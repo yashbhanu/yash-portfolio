@@ -12,8 +12,8 @@ export const about: About = {
     { layer: "language", label: "Languages", items: ["TypeScript", "JavaScript", "Python"] },
     { layer: "frontend", label: "Frontend", items: ["React", "Next.js", "Svelte", "Tailwind CSS"] },
     { layer: "backend", label: "Backend", items: ["Node.js", "NestJS", "Express.js", "RabbitMQ", "Socket.io"] },
-    { layer: "ai", label: "AI", items: ["RAG pipelines", "Vector search", "LLM integration"] },
+    { layer: "ai", label: "AI", items: ["RAG pipelines", "Vector search", "Claude Code","LLM integration"] },
     { layer: "data", label: "Data", items: ["MongoDB", "SQL", "DynamoDB"] },
-    { layer: "infra", label: "Cloud & DevOps", items: ["AWS (ECS)", "Docker", "GitHub Actions", "Vercel"] },
+    { layer: "infra", label: "Cloud & DevOps", items: ["AWS", "Docker", "GitHub Actions", "Vercel"] },
   ],
 };
