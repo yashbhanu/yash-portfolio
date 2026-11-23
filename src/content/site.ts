@@ -20,7 +20,7 @@ export const site: Site = {
   email: "bhanushaliyash2000@gmail.com",
   phone: { display: "+91 88798 48787", tel: "+918879848787" },
   resumeUrl:
-    "https://drive.google.com/file/d/13JTvwEXB2rX6cdUytfk3hHxPNaxYmw94/view",
+    "https://drive.google.com/file/d/1yOQLvVgwYO1zE-n9zs_5Rc3pN4wyBoGl/view",
   mediumFeed: "https://medium.com/feed/@bhanushaliyash2000",
   sourceRepo: "https://github.com/yashbhanu/yash-portfolio",
   socials: [
